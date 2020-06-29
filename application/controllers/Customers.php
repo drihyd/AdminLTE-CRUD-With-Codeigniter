@@ -24,7 +24,7 @@ class Customers extends AUTH_Controller {
 
 	public function tampil() {
 		$data['dataPegawai'] = $this->M_pegawai->select_all();
-		$this->load->view('pegawai/list_data', $data);
+		$this->load->view('customers/list_data', $data);
 	}
 
 	public function prosesTambah() {

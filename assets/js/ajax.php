@@ -37,6 +37,8 @@
 
 	function tampilPegawai() {
 		$.get('<?php echo base_url('customers/tampil'); ?>', function(data) {
+			
+			alert(data);
 			MyTable.fnDestroy();
 			$('#data-pegawai').html(data);
 			refresh();

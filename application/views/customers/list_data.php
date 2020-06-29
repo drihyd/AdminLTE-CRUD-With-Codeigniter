@@ -1,10 +1,9 @@
 <?php
-print_r($dataPegawai);
-die();
+$sno=1;
   foreach ($dataPegawai as $pegawai) {
     ?>
     <tr>
-      <td style="min-width:230px;"><?php echo $pegawai->pegawai; ?></td>
+      <td style="min-width:230px;"><?php echo $sno; ?></td>
       <td><?php echo ucfirst($pegawai->first_name)." ".ucfirst($pegawai->first_name); ?></td>
       <td><?php echo $pegawai->email; ?></td>
       <td><?php echo $pegawai->contact_no; ?></td>
@@ -14,5 +13,7 @@ die();
       </td>
     </tr>
     <?php
+	
+	$sno++;
   }
 ?>
