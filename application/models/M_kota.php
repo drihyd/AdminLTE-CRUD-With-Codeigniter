@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_kota extends CI_Model {
 	public function select_all() {
-		$sql = " SELECT users.id AS user_id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.state,survey.date_of_survey,survey.id as surveyid FROM users,plots,survey WHERE survey.plot_id = plots.id and plots.	customer_id = users.id";
+		$sql = " SELECT users.id AS user_id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.state,survey.date_of_survey,survey.date_of_report,survey.id as surveyid,survey.kml_file as kml_file FROM users,plots,survey WHERE survey.plot_id = plots.id and plots.	customer_id = users.id";
 		$data = $this->db->query($sql);
 		return $data->result();
 	}
@@ -31,6 +31,8 @@ class M_kota extends CI_Model {
 			'customer_id' => $data['customer_id'],
 			'plot_id' => $data['plot_id'],
 			'date_of_survey' => $data['date_of_survey'],
+			'date_of_report' => $data['date_of_report'],
+			'kml_file' => $data['kml_file'],
 			'created_date' => $timeStamp,
 			'modified_date' => $timeStamp
 
@@ -54,7 +56,10 @@ class M_kota extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE survey SET customer_id='".$data['customer_id']."',plot_id ='".$data['plot_id ']."',date_of_survey='".$data['date_of_survey']."' WHERE id='".$data['id'] ."'";
+
+
+	$sql = "UPDATE survey SET customer_id='".$data['customer_id']."',plot_id ='".$data['plot_id']."',date_of_survey='".$data['date_of_survey']."',date_of_report='".$data['date_of_report']."',kml_file='".$data['kml_file']."' WHERE id='".$data['id'] ."'";
+	//echo $this->db->last_query(); 
 
 		$this->db->query($sql);
 

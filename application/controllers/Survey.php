@@ -32,10 +32,25 @@ class Survey extends AUTH_Controller {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
 		$this->form_validation->set_rules('date_of_survey', 'Date of surver', 'trim|required');
+		$this->form_validation->set_rules('date_of_report', 'Date of report', 'trim|required');
 	
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
+
+
+			$config['upload_path'] = './assets/kml_files/';
+			$config['allowed_types'] = 'jpg|png|PNG';			
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('kml_file')){
+				$error = array('error' => $this->upload->display_errors());
+				
+			}
+			else{
+				$data_kml_file = $this->upload->data();
+				$data['kml_file'] = $data_kml_file['file_name'];
+			}
+
 			$result = $this->M_kota->insert($data);
 
 			if ($result > 0) {
@@ -65,9 +80,29 @@ class Survey extends AUTH_Controller {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
 		$this->form_validation->set_rules('date_of_survey', 'Date of surver', 'trim|required');
+		$this->form_validation->set_rules('date_of_report', 'Date of report', 'trim|required');
+		//$this->form_validation->set_rules('kml_file', 'KML File', 'trim|required');
 
 		$data 	= $this->input->post();
+
+
+
 		if ($this->form_validation->run() == TRUE) {
+
+			$config['upload_path'] = './assets/kml_files/';
+			$config['allowed_types'] = 'jpg|png|PNG';			
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('kml_file')){
+				$error = array('error' => $this->upload->display_errors());
+				
+			}
+			else{
+				$data_kml_file = $this->upload->data();
+				$data['kml_file'] = $data_kml_file['file_name'];
+			}
+
+
+
 			$result = $this->M_kota->update($data);
 
 			if ($result > 0) {

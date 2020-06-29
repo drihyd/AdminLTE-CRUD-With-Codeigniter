@@ -3,7 +3,7 @@
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <h3 style="display:block; text-align:center;">Add survey data</h3>
 
-  <form id="form-tambah-kota" method="POST">
+  <form id="form-tambah-kota" class="form-tambah-kota" method="POST" enctype="multipart/form-data">
   <div class="input-group form-group">
   <span class="input-group-addon" id="sizing-addon2">
   <i class="glyphicon glyphicon-user"></i>
@@ -37,6 +37,20 @@
         <i class="glyphicon glyphicon-time"></i>
       </span>
       <input type="date" class="form-control" placeholder="Date of survey" name="date_of_survey" aria-describedby="sizing-addon2">
+    </div>
+
+            <div class="input-group form-group">
+      <span class="input-group-addon" id="sizing-addon2">
+        <i class="glyphicon glyphicon-time"></i>
+      </span>
+      <input type="date" class="form-control" placeholder="Date of report" name="date_of_report" aria-describedby="sizing-addon2">
+    </div>
+
+    <div class="input-group form-group">
+      <span class="input-group-addon" id="sizing-addon2">
+        <i class="glyphicon glyphicon-file"></i>
+      </span>
+      <input type="file" class="form-control" placeholder="KML File" name="kml_file" aria-describedby="sizing-addon2" required="required">
     </div>
    
 

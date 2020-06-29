@@ -176,6 +176,7 @@
 			data: "id=" +id
 		})
 		.done(function(data) {
+			
 			$('#tempat-modal').html(data);
 			$('#update-kota').modal('show');
 		})
@@ -203,17 +204,29 @@
 		})
 	})
 
-	$('#form-tambah-kota').submit(function(e) {
-		var data = $(this).serialize();
 
-		$.ajax({
-			method: 'POST',
-			url: '<?php echo base_url('survey/prosesTambah'); ?>',
-			data: data
-		})
-		.done(function(data) {
-			var out = jQuery.parseJSON(data);
+$(document).ready(function() {
+	
+	
+		
+		$(document).on('submit', '#form-tambah-kota', function(e){
+		
+		e.preventDefault();
+		
+		
+		var form = document.getElementById('form-tambah-kota'); //id of form
+var formdata = new FormData(form);
+var xhr = new XMLHttpRequest();
+xhr.open('POST','<?php echo base_url('survey/prosesTambah'); ?>',true);
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+//if you have included the setRequestHeader remove that line as you need the 
+// multipart/form-data as content type.
+xhr.onload = function(){
+	
+	console.log(xhr.responseText);
+	var out = jQuery.parseJSON(xhr.responseText);
 
+		
 			tampilKota();
 			if (out.status == 'form') {
 				$('.form-msg').html(out.msg);
@@ -224,20 +237,27 @@
 				$('.msg').html(out.msg);
 				effect_msg();
 			}
-		})
-		
-		e.preventDefault();
+ 
+}
+xhr.send(formdata);
+e.preventDefault();
 	});
 
+
+
+	
 	$(document).on('submit', '#form-update-kota', function(e){
-		var data = $(this).serialize();
-		$.ajax({
-			method: 'POST',
-			url: '<?php echo base_url('survey/prosesUpdate'); ?>',
-			data: data
-		})
-		.done(function(data) {
-			var out = jQuery.parseJSON(data);
+		e.preventDefault();
+		//var postdata = $(this).serializeArray();
+var form = document.getElementById('form-update-kota'); //id of form
+var formdata = new FormData(form);
+var xhr = new XMLHttpRequest();
+xhr.open('POST','<?php echo base_url('survey/prosesUpdate'); ?>',true);
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+//if you have included the setRequestHeader remove that line as you need the 
+// multipart/form-data as content type.
+xhr.onload = function(){
+	var out = jQuery.parseJSON(xhr.responseText);
 
 			tampilKota();
 			if (out.status == 'form') {
@@ -249,9 +269,13 @@
 				$('.msg').html(out.msg);
 				effect_msg();
 			}
-		})
-		
-		e.preventDefault();
+ 
+}
+xhr.send(formdata);
+
+	e.preventDefault();
+	});
+	
 	});
 
 	$('#tambah-kota').on('hidden.bs.modal', function () {

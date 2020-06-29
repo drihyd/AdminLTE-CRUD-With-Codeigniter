@@ -26,6 +26,8 @@ Add Data</button>
           <th>Customer</th>
           <th>Plot Owner</th>
           <th>Survey Date</th>
+          <th>Report Date</th>
+          <th>KML File</th>
           <th style="text-align: center;">Action</th>
         </tr>
       </thead>
