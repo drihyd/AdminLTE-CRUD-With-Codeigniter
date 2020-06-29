@@ -19,10 +19,10 @@
     <table id="list-data" class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th>Nama</th>
-          <th>No Telp</th>
-          <th>Asal kota</th>
-          <th>Jenis Kelamin</th>
+          <th>S.No.</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Phone</th>
           <th>Posisi</th>
           <th style="text-align: center;">Aksi</th>
         </tr>

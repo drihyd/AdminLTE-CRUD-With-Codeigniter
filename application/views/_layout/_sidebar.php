@@ -26,10 +26,10 @@
         </a>
       </li>
       
-      <li <?php if ($page == 'pegawai') {echo 'class="active"';} ?>>
-        <a href="<?php echo base_url('Pegawai'); ?>">
+      <li <?php if ($page == 'customers') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('customers'); ?>">
           <i class="fa fa-user"></i>
-          <span>Data Pegawai</span>
+          <span>Customers</span>
         </a>
       </li>
 

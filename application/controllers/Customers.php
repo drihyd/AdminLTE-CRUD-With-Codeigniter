@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pegawai extends AUTH_Controller {
+class Customers extends AUTH_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('M_pegawai');
@@ -11,17 +11,15 @@ class Pegawai extends AUTH_Controller {
 
 	public function index() {
 		$data['userdata'] = $this->userdata;
-		$data['dataPegawai'] = $this->M_pegawai->select_all();
+		$data['dataPegawai'] = $this->M_pegawai->select_all();		
 		$data['dataPosisi'] = $this->M_posisi->select_all();
 		$data['dataKota'] = $this->M_kota->select_all();
 
-		$data['page'] = "pegawai";
-		$data['judul'] = "Data Pegawai";
-		$data['deskripsi'] = "Manage Data Pegawai";
-
+		$data['page'] = "Customers";
+		$data['judul'] = "Data Customers";
+		$data['deskripsi'] = "Manage Data Customers";
 		$data['modal_tambah_pegawai'] = show_my_modal('modals/modal_tambah_pegawai', 'tambah-pegawai', $data);
-
-		$this->template->views('pegawai/home', $data);
+		$this->template->views('customers/home', $data);
 	}
 
 	public function tampil() {
