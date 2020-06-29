@@ -51,8 +51,8 @@ class Home extends AUTH_Controller {
 		$data['data_kota'] = json_encode($data_kota);
 
 		$data['page'] 			= "home";
-		$data['judul'] 			= "Beranda";
-		$data['deskripsi'] 		= "Manage Data CRUD";
+		$data['judul'] 			= "Home";
+		$data['deskripsi'] 		= "Manage Data";
 		$this->template->views('home', $data);
 	}
 }

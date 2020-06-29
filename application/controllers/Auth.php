@@ -28,7 +28,7 @@ class Auth extends CI_Controller {
 			$data = $this->M_auth->login($username, $password);
 
 			if ($data == false) {
-				$this->session->set_flashdata('error_msg', 'Username / Password Anda Salah.');
+				$this->session->set_flashdata('error_msg', 'User name or password is wrong.');
 				redirect('Auth');
 			} else {
 				$session = [

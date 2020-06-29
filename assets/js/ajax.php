@@ -53,7 +53,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Pegawai/delete'); ?>",
+			url: "<?php echo base_url('customers/delete'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -69,7 +69,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Pegawai/update'); ?>",
+			url: "<?php echo base_url('customers/update'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -83,7 +83,7 @@
 
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo base_url('Pegawai/prosesTambah'); ?>',
+			url: '<?php echo base_url('customers/prosesTambah'); ?>',
 			data: data
 		})
 		.done(function(data) {
@@ -109,7 +109,7 @@
 
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo base_url('Pegawai/prosesUpdate'); ?>',
+			url: '<?php echo base_url('customers/prosesUpdate'); ?>',
 			data: data
 		})
 		.done(function(data) {

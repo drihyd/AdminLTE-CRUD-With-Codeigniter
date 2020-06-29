@@ -26,6 +26,7 @@
           <th>Full Name</th>
           <th>Email</th>
           <th>Phone</th>
+		  <th>Address</th>
           <th style="text-align: center;">Actions</th>
         </tr>
       </thead>
@@ -40,7 +41,7 @@
 
 <div id="tempat-modal"></div>
 
-<?php show_my_confirm('konfirmasiHapus', 'hapus-dataPegawai', 'Hapus Data Ini?', 'Ya, Hapus Data Ini'); ?>
+<?php show_my_confirm('konfirmasiHapus', 'hapus-dataPegawai', 'Delete This Data?', 'Ya, Delete This Data'); ?>
 <?php
   $data['judul'] = 'Pegawai';
   $data['url'] = 'Pegawai/import';

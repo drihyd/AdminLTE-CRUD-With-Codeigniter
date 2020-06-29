@@ -33,10 +33,10 @@
         </a>
       </li>
 
-      <li <?php if ($page == 'posisi') {echo 'class="active"';} ?>>
-        <a href="<?php echo base_url('Posisi'); ?>">
+      <li <?php if ($page == 'plots') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('plots'); ?>">
           <i class="fa fa-briefcase"></i>
-          <span>Data Posisi</span>
+          <span>Plots</span>
         </a>
       </li>
       

@@ -28,21 +28,22 @@ class Customers extends AUTH_Controller {
 	}
 
 	public function prosesTambah() {
-		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('kota', 'Kota', 'trim|required');
-		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
-		$this->form_validation->set_rules('posisi', 'Posisi', 'trim|required');
-
+		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
+		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('contact_no', 'Phone', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		
 		$data = $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
 			$result = $this->M_pegawai->insert($data);
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Pegawai Berhasil ditambahkan', '20px');
+				$out['msg'] = show_succ_msg('Customer Data Successfully added.', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_err_msg('Data Pegawai Gagal ditambahkan', '20px');
+				$out['msg'] = show_err_msg('Customer Data Failed added.', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -64,10 +65,13 @@ class Customers extends AUTH_Controller {
 	}
 
 	public function prosesUpdate() {
-		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('kota', 'Kota', 'trim|required');
-		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
-		$this->form_validation->set_rules('posisi', 'Posisi', 'trim|required');
+		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
+		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('contact_no', 'Phone', 'trim|required');
+		$this->form_validation->set_rules('address', 'Address', 'trim|required');
+		
+		
 
 		$data = $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
@@ -75,10 +79,10 @@ class Customers extends AUTH_Controller {
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Pegawai Berhasil diupdate', '20px');
+				$out['msg'] = show_succ_msg('Customer Data Successfully updated.', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Pegawai Gagal diupdate', '20px');
+				$out['msg'] = show_succ_msg('Customer Data Failed to be updated.', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -93,9 +97,9 @@ class Customers extends AUTH_Controller {
 		$result = $this->M_pegawai->delete($id);
 
 		if ($result > 0) {
-			echo show_succ_msg('Data Pegawai Berhasil dihapus', '20px');
+			echo show_succ_msg('Customer Data Successfully deleted.', '20px');
 		} else {
-			echo show_err_msg('Data Pegawai Gagal dihapus', '20px');
+			echo show_err_msg('Customer Data Failed to delete.', '20px');
 		}
 	}
 
@@ -188,11 +192,11 @@ class Customers extends AUTH_Controller {
 				if (count($resultData) != 0) {
 					$result = $this->M_pegawai->insert_batch($resultData);
 					if ($result > 0) {
-						$this->session->set_flashdata('msg', show_succ_msg('Data Pegawai Berhasil diimport ke database'));
+						$this->session->set_flashdata('msg', show_succ_msg('Customer Data Successfully imported into database'));
 						redirect('Pegawai');
 					}
 				} else {
-					$this->session->set_flashdata('msg', show_msg('Data Pegawai Gagal diimport ke database (Data Sudah terupdate)', 'warning', 'fa-warning'));
+					$this->session->set_flashdata('msg', show_msg('Customer Data Failed to import into database (Data has been updated)', 'warning', 'fa-warning'));
 					redirect('Pegawai');
 				}
 

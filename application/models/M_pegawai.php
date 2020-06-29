@@ -43,7 +43,8 @@ class M_pegawai extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE users SET nama='" .$data['nama'] ."', telp='" .$data['telp'] ."', id_kota=" .$data['kota'] .", id_kelamin=" .$data['jk'] .", id_posisi=" .$data['posisi'] ." WHERE id='" .$data['id'] ."'";
+		$timeStamp = time();
+		$sql = "UPDATE users SET first_name='" .$data['first_name'] ."', last_name='" .$data['last_name'] ."', email='" .$data['email'] ."', address='" .$data['address'] ."',contact_no='".$data['contact_no'] ."',modified_date='".$timeStamp."' WHERE id='" .$data['id'] ."'";
 
 		$this->db->query($sql);
 
@@ -58,13 +59,33 @@ class M_pegawai extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
+    public function hash($password) {
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        return $hash;
+    }
 	public function insert($data) {
-		$id = md5(DATE('ymdhms').rand());
-		$sql = "INSERT INTO users VALUES('{$id}','" .$data['nama'] ."','" .$data['telp'] ."'," .$data['kota'] ."," .$data['jk'] ."," .$data['posisi'] .",1)";
-
-		$this->db->query($sql);
-
-		return $this->db->affected_rows();
+		$timeStamp = time();
+		 $hash = $this->hash($data['password']);
+        $data = array(
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'email' => $data['email'],
+            'password' => $hash,
+            'contact_no' => $data['contact_no'],
+            'address' => $data['address'],
+            'dob' => '',
+            'verification_code' => '1',
+            'created_date' => $timeStamp,
+            'modified_date' => $timeStamp,
+            'status' => 1
+        );
+        $this->db->insert('users', $data);
+        if (!empty($this->db->insert_id()) && $this->db->insert_id() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+	
 	}
 
 	public function insert_batch($data) {
