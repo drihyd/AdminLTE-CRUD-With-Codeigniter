@@ -25,11 +25,26 @@ class M_kota extends CI_Model {
 	}
 
 	public function insert($data) {
-		$sql = "INSERT INTO survey VALUES('','" .$data['survey'] ."')";
 
-		$this->db->query($sql);
+		$timeStamp = time();
+	     $data = array(
+			'customer_id' => $data['customer_id'],
+			'plot_id' => $data['plot_id'],
+			'date_of_survey' => $data['date_of_survey'],
+			'created_date' => $timeStamp,
+			'modified_date' => $timeStamp
 
-		return $this->db->affected_rows();
+			);
+
+        $this->db->insert('survey', $data);
+ 
+        if (!empty($this->db->insert_id()) && $this->db->insert_id() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+
+
 	}
 
 	public function insert_batch($data) {
@@ -39,7 +54,7 @@ class M_kota extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE survey SET nama='" .$data['survey'] ."' WHERE id='" .$data['id'] ."'";
+		$sql = "UPDATE survey SET customer_id='".$data['customer_id']."',plot_id ='".$data['plot_id ']."',date_of_survey='".$data['date_of_survey']."' WHERE id='".$data['id'] ."'";
 
 		$this->db->query($sql);
 

@@ -40,10 +40,10 @@ class Survey extends AUTH_Controller {
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Kota Berhasil ditambahkan', '20px');
+				$out['msg'] = show_succ_msg('Survey Data Successfully added', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_err_msg('Data Kota Gagal ditambahkan', '20px');
+				$out['msg'] = show_err_msg('Survey Failed Data added', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -55,7 +55,6 @@ class Survey extends AUTH_Controller {
 
 	public function update() {
 		$data['userdata'] 	= $this->userdata;
-
 		$id 				= trim($_POST['id']);
 		$data['dataKota'] 	= $this->M_kota->select_by_id($id);
 
@@ -63,7 +62,9 @@ class Survey extends AUTH_Controller {
 	}
 
 	public function prosesUpdate() {
-		$this->form_validation->set_rules('kota', 'Kota', 'trim|required');
+		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
+		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
+		$this->form_validation->set_rules('date_of_survey', 'Date of surver', 'trim|required');
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
@@ -71,10 +72,10 @@ class Survey extends AUTH_Controller {
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Kota Berhasil diupdate', '20px');
+				$out['msg'] = show_succ_msg('Survey Data Successfully updated', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Kota Gagal diupdate', '20px');
+				$out['msg'] = show_succ_msg('Survey Data Failed to update', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -89,9 +90,9 @@ class Survey extends AUTH_Controller {
 		$result = $this->M_kota->delete($id);
 		
 		if ($result > 0) {
-			echo show_succ_msg('Data Kota Berhasil dihapus', '20px');
+			echo show_succ_msg('Survey Data Successfully deleted', '20px');
 		} else {
-			echo show_err_msg('Data Kota Gagal dihapus', '20px');
+			echo show_err_msg('Survey Failed Data deleted', '20px');
 		}
 	}
 

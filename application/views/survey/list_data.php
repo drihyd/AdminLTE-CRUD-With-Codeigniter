@@ -14,7 +14,7 @@ if($kota->date_of_survey =='0000-00-00 00:00:00'){
 }
 else
 {
-  echo date('d-m-Y H:i',strtotime($kota->date_of_survey)); 
+  echo date('d-M-Y',strtotime($kota->date_of_survey)); 
 }
 
 
