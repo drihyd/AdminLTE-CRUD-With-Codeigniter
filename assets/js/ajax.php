@@ -140,7 +140,7 @@
 
 	//Kota
 	function tampilKota() {
-		$.get('<?php echo base_url('Kota/tampil'); ?>', function(data) {
+		$.get('<?php echo base_url('survey/tampil'); ?>', function(data) {
 			MyTable.fnDestroy();
 			$('#data-kota').html(data);
 			refresh();
@@ -156,7 +156,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Kota/delete'); ?>",
+			url: "<?php echo base_url('survey/delete'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -172,7 +172,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Kota/update'); ?>",
+			url: "<?php echo base_url('survey/update'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -186,7 +186,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Kota/detail'); ?>",
+			url: "<?php echo base_url('survey/detail'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -208,7 +208,7 @@
 
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo base_url('Kota/prosesTambah'); ?>',
+			url: '<?php echo base_url('survey/prosesTambah'); ?>',
 			data: data
 		})
 		.done(function(data) {
@@ -231,10 +231,9 @@
 
 	$(document).on('submit', '#form-update-kota', function(e){
 		var data = $(this).serialize();
-
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo base_url('Kota/prosesUpdate'); ?>',
+			url: '<?php echo base_url('survey/prosesUpdate'); ?>',
 			data: data
 		})
 		.done(function(data) {
@@ -265,7 +264,7 @@
 
 	//Posisi
 	function tampilPosisi() {
-		$.get('<?php echo base_url('Posisi/tampil'); ?>', function(data) {
+		$.get('<?php echo base_url('plots/tampil'); ?>', function(data) {
 			MyTable.fnDestroy();
 			$('#data-posisi').html(data);
 			refresh();
@@ -281,7 +280,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Posisi/delete'); ?>",
+			url: "<?php echo base_url('plots/delete'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -297,7 +296,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Posisi/update'); ?>",
+			url: "<?php echo base_url('plots/update'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -311,7 +310,7 @@
 		
 		$.ajax({
 			method: "POST",
-			url: "<?php echo base_url('Posisi/detail'); ?>",
+			url: "<?php echo base_url('plots/detail'); ?>",
 			data: "id=" +id
 		})
 		.done(function(data) {
@@ -333,10 +332,11 @@
 
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo base_url('Posisi/prosesTambah'); ?>',
+			url: '<?php echo base_url('plots/prosesTambah'); ?>',
 			data: data
 		})
 		.done(function(data) {
+		
 			var out = jQuery.parseJSON(data);
 
 			tampilPosisi();
@@ -359,7 +359,7 @@
 
 		$.ajax({
 			method: 'POST',
-			url: '<?php echo base_url('Posisi/prosesUpdate'); ?>',
+			url: '<?php echo base_url('plots/prosesUpdate'); ?>',
 			data: data
 		})
 		.done(function(data) {

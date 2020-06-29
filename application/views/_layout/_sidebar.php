@@ -40,10 +40,10 @@
         </a>
       </li>
       
-      <li <?php if ($page == 'kota') {echo 'class="active"';} ?>>
-        <a href="<?php echo base_url('Kota'); ?>">
+      <li <?php if ($page == 'survey') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('survey'); ?>">
           <i class="fa fa-location-arrow"></i>
-          <span>Data Kota</span>
+          <span>Survey</span>
         </a>
       </li>
     </ul>

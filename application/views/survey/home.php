@@ -5,14 +5,17 @@
 <div class="box">
   <div class="box-header">
     <div class="col-md-6">
-        <button class="form-control btn btn-primary" data-toggle="modal" data-target="#tambah-kota"><i class="glyphicon glyphicon-plus-sign"></i> Tambah Data</button>
+        <button class="form-control btn btn-primary" data-toggle="modal" data-target="#tambah-kota"><i class="glyphicon glyphicon-plus-sign"></i> 
+Add Data</button>
     </div>
+    <!--
     <div class="col-md-3">
         <a href="<?php echo base_url('Kota/export'); ?>" class="form-control btn btn-default"><i class="glyphicon glyphicon glyphicon-floppy-save"></i> Export Data Excel</a>
     </div>
     <div class="col-md-3">
         <button class="form-control btn btn-default" data-toggle="modal" data-target="#import-kota"><i class="glyphicon glyphicon glyphicon-floppy-open"></i> Import Data Excel</button>
     </div>
+  -->
   </div>
   <!-- /.box-header -->
   <div class="box-body">
@@ -20,8 +23,10 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Nama Kota</th>
-          <th style="text-align: center;">Aksi</th>
+          <th>Customer</th>
+          <th>Plot Owner</th>
+          <th>Survey Date</th>
+          <th style="text-align: center;">Action</th>
         </tr>
       </thead>
       <tbody id="data-kota">
@@ -35,7 +40,7 @@
 
 <div id="tempat-modal"></div>
 
-<?php show_my_confirm('konfirmasiHapus', 'hapus-dataKota', 'Hapus Data Ini?', 'Ya, Hapus Data Ini'); ?>
+<?php show_my_confirm('konfirmasiHapus', 'hapus-dataKota', 'Delete This Data?', 'Ya, Delete This Data'); ?>
 <?php
   $data['judul'] = 'Kota';
   $data['url'] = 'Kota/import';

@@ -5,28 +5,38 @@ class Plots extends AUTH_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('M_posisi');
+		$this->load->model('M_pegawai');
+		$this->dataCustomers = $this->M_pegawai->select_all();
 	}
 
 	public function index() {
 		$data['userdata'] 	= $this->userdata;
 		$data['dataPosisi'] = $this->M_posisi->select_all();
+	
 
 		$data['page'] 		= "posisi";
-		$data['judul'] 		= "Data Posisi";
-		$data['deskripsi'] 	= "Manage Data Posisi";
-
+		$data['judul'] 		= "Plots Data";
+		$data['deskripsi'] 	= "Manage Data Plots";
 		$data['modal_tambah_posisi'] = show_my_modal('modals/modal_tambah_posisi', 'tambah-posisi', $data);
-
-		$this->template->views('posisi/home', $data);
+		$this->template->views('plots/home', $data);
 	}
 
 	public function tampil() {
 		$data['dataPosisi'] = $this->M_posisi->select_all();
-		$this->load->view('posisi/list_data', $data);
+		$this->load->view('plots/list_data', $data);
 	}
 
 	public function prosesTambah() {
-		$this->form_validation->set_rules('posisi', 'posisi', 'trim|required');
+		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
+		$this->form_validation->set_rules('owner_name', 'Owner Name', 'trim|required');
+		$this->form_validation->set_rules('address1', 'Address1', 'trim|required');
+		$this->form_validation->set_rules('address2', 'Address2', 'trim|required');
+		$this->form_validation->set_rules('survey_no', 'Survey No', 'trim|required');
+		$this->form_validation->set_rules('village', 'Village', 'trim|required');
+		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');
+		$this->form_validation->set_rules('district', 'District', 'trim|required');
+		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
+		$this->form_validation->set_rules('state', 'State', 'trim|required');
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
@@ -34,10 +44,10 @@ class Plots extends AUTH_Controller {
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Posisi Berhasil ditambahkan', '20px');
+				$out['msg'] = show_succ_msg('Successfully Added Plot Data.', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_err_msg('Data Posisi Gagal ditambahkan', '20px');
+				$out['msg'] = show_err_msg('Failed Plot Data added', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -49,15 +59,24 @@ class Plots extends AUTH_Controller {
 
 	public function update() {
 		$data['userdata'] 	= $this->userdata;
-
-		$id 				= trim($_POST['id']);
+		$id= trim($_POST['id']);
 		$data['dataPosisi'] = $this->M_posisi->select_by_id($id);
-
 		echo show_my_modal('modals/modal_update_posisi', 'update-posisi', $data);
 	}
 
 	public function prosesUpdate() {
-		$this->form_validation->set_rules('posisi', 'posisi', 'trim|required');
+
+		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
+		$this->form_validation->set_rules('owner_name', 'Owner Name', 'trim|required');
+		$this->form_validation->set_rules('address1', 'Address1', 'trim|required');
+		$this->form_validation->set_rules('address2', 'Address2', 'trim|required');
+		$this->form_validation->set_rules('survey_no', 'Survey No', 'trim|required');
+		$this->form_validation->set_rules('village', 'Village', 'trim|required');
+		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');
+		$this->form_validation->set_rules('district', 'District', 'trim|required');
+		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
+		$this->form_validation->set_rules('state', 'State', 'trim|required');
+
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
@@ -65,10 +84,10 @@ class Plots extends AUTH_Controller {
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Posisi Berhasil diupdate', '20px');
+				$out['msg'] = show_succ_msg('Plot Data Successfully updated', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Data Posisi Gagal diupdate', '20px');
+				$out['msg'] = show_succ_msg('Plot Position Data updated', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -83,9 +102,9 @@ class Plots extends AUTH_Controller {
 		$result = $this->M_posisi->delete($id);
 		
 		if ($result > 0) {
-			echo show_succ_msg('Data Posisi Berhasil dihapus', '20px');
+			echo show_succ_msg('Plot Data Successfully deleted', '20px');
 		} else {
-			echo show_err_msg('Data Posisi Gagal dihapus', '20px');
+			echo show_err_msg('Failed Plot Data deleted', '20px');
 		}
 	}
 
