@@ -46,6 +46,13 @@
           <span>Survey</span>
         </a>
       </li>
+	  
+	    <li <?php if ($page == 'plot_photos') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('plot_photos'); ?>">
+          <i class="fa fa-location-arrow"></i>
+          <span>Plot Phots</span>
+        </a>
+      </li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>
