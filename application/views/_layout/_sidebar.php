@@ -53,6 +53,15 @@
           <span>Plot Phots</span>
         </a>
       </li>
+	  
+	  	    <li <?php if ($page == 'plot_videos') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('plot_videos'); ?>">
+          <i class="fa fa-location-arrow"></i>
+          <span>Plot Videos</span>
+        </a>
+      </li>
+	  
+	  
     </ul>
     <!-- /.sidebar-menu -->
   </section>

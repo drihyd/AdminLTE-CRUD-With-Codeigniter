@@ -1,9 +1,9 @@
 <div class="col-md-offset-1 col-md-10 col-md-offset-1 well">
   <div class="form-msg"></div>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <h3 style="display:block; text-align:center;">Survey Data Update</h3>
+  <h3 style="display:block; text-align:center;">Plot Photo Data Update</h3>
 
-  <form id="form-update-kota" method="POST" enctype="multipart/form-data">
+  <form id="form-plots-photos-kota" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $dataKota->id; ?>">
     
 
@@ -49,26 +49,13 @@
   </div>
 
 
-        <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-time"></i>
-      </span>
-      <input type="date" class="form-control" placeholder="Date of survey" name="date_of_survey" aria-describedby="sizing-addon2" value="<?php echo $dataKota->date_of_survey; ?>">
-    </div>
-
-
-            <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-time"></i>
-      </span>
-      <input type="date" class="form-control" placeholder="Date of report" name="date_of_report" aria-describedby="sizing-addon2" value="<?php echo $dataKota->date_of_report; ?>">
-    </div>
+ 
 
         <div class="input-group form-group">
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-file"></i>
       </span>
-      <input type="file" class="form-control" placeholder="KML File" name="kml_file" id="kml_file" aria-describedby="sizing-addon2" required="required">
+      <input type="file" class="form-control" placeholder="KML File" name="photo" id="photo" aria-describedby="sizing-addon2" required="required">
     </div>
 
 

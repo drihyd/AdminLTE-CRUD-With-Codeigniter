@@ -1,23 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Plot_photos extends AUTH_Controller {
+class Plot_videos extends AUTH_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('M_kota');
 		$this->load->model('M_pegawai');
 		$this->load->model('M_posisi');
 		$this->load->model('M_P_phots');
+		$this->load->model('M_P_videos');
 		$this->dataCustomers = $this->M_pegawai->select_all();
 		$this->dataPlots = $this->M_posisi->select_all();
 	}
 
 	public function index() {
 		$data['userdata'] 	= $this->userdata;
-		$data['dataKota'] 	= $this->M_P_phots->select_all();
+		$data['dataKota'] 	= $this->M_P_videos->select_all();
 		$data['page'] 		= "kota";
-		$data['judul'] 		= "Data Plot Photos";
-		$data['deskripsi'] 	= "Manage Data Plot Photos";
+		$data['judul'] 		= "Data Plot Videos";
+		$data['deskripsi'] 	= "Manage Data Plot Videos";
 
 		$data['modal_tambah_kota'] = show_my_modal('modals/modal_plots_add_photos', 'tambah-kota', $data);
 
@@ -25,7 +26,7 @@ class Plot_photos extends AUTH_Controller {
 	}
 
 	public function tampil() {
-		$data['dataKota'] = $this->M_P_phots->select_all();
+		$data['dataKota'] = $this->M_P_videos->select_all();
 		
 
 		$this->load->view('plots_photos/list_data', $data);
@@ -52,14 +53,14 @@ class Plot_photos extends AUTH_Controller {
 				$data['photo'] = $data_kml_file['file_name'];
 			}
 
-			$result = $this->M_P_phots->insert($data);
+			$result = $this->M_P_videos->insert($data);
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Plot Photo Data Successfully added', '20px');
+				$out['msg'] = show_succ_msg('Plot Video Data Successfully added', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_err_msg('Plot Photo Failed Data added', '20px');
+				$out['msg'] = show_err_msg('Plot Video Failed Data added', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -72,7 +73,7 @@ class Plot_photos extends AUTH_Controller {
 	public function update() {
 		$data['userdata'] 	= $this->userdata;
 		$id 				= trim($_POST['id']);
-		$data['dataKota'] 	= $this->M_P_phots->select_by_id($id);
+		$data['dataKota'] 	= $this->M_P_videos->select_by_id($id);
 
 		echo show_my_modal('modals/modal_plots_update_photos', 'update-kota', $data);
 	}
@@ -103,14 +104,14 @@ class Plot_photos extends AUTH_Controller {
 
 
 
-			$result = $this->M_P_phots->update($data);
+			$result = $this->M_P_videos->update($data);
 
 			if ($result > 0) {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Plot Photo Data Successfully updated', '20px');
+				$out['msg'] = show_succ_msg('Plot Video Data Successfully updated', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Plot Photo Data Failed to update', '20px');
+				$out['msg'] = show_succ_msg('Plot Video Data Failed to update', '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -122,12 +123,12 @@ class Plot_photos extends AUTH_Controller {
 
 	public function delete() {
 		$id = $_POST['id'];
-		$result = $this->M_P_phots->delete($id);
+		$result = $this->M_P_videos->delete($id);
 		
 		if ($result > 0) {
-			echo show_succ_msg('Plot Photo Data Successfully deleted', '20px');
+			echo show_succ_msg('Plot Video Data Successfully deleted', '20px');
 		} else {
-			echo show_err_msg('Plot Photo Failed Data deleted', '20px');
+			echo show_err_msg('Plot Video Failed Data deleted', '20px');
 		}
 	}
 
@@ -135,8 +136,8 @@ class Plot_photos extends AUTH_Controller {
 		$data['userdata'] 	= $this->userdata;
 
 		$id 				= trim($_POST['id']);
-		$data['kota'] = $this->M_P_phots->select_by_id($id);
-		$data['jumlahKota'] = $this->M_P_phots->total_rows();
+		$data['kota'] = $this->M_P_videos->select_by_id($id);
+		$data['jumlahKota'] = $this->M_P_videos->total_rows();
 		$data['dataKota'] = $this->M_P_phots->select_by_pegawai($id);
 
 		echo show_my_modal('modals/modal_detail_kota', 'detail-kota', $data, 'lg');
