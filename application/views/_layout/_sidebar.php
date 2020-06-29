@@ -10,7 +10,7 @@
       <div class="pull-left info">
         <p><?php echo $userdata->nama; ?></p>
         <!-- Status -->
-        <a href="<?php echo base_url(); ?>assets/#"><i class="fa fa-circle text-success"></i> Online</a>
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
 
@@ -35,28 +35,28 @@
 
       <li <?php if ($page == 'plots') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('plots'); ?>">
-          <i class="fa fa-briefcase"></i>
+          <i class="fa fa-map-signs"></i>
           <span>Plots</span>
         </a>
       </li>
       
       <li <?php if ($page == 'survey') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('survey'); ?>">
-          <i class="fa fa-location-arrow"></i>
+          <i class="fa fa-map-marker"></i>
           <span>Survey</span>
         </a>
       </li>
 	  
 	    <li <?php if ($page == 'plot_photos') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('plot_photos'); ?>">
-          <i class="fa fa-location-arrow"></i>
+          <i class="fa fa-picture-o"></i>
           <span>Plot Phots</span>
         </a>
       </li>
 	  
 	  	    <li <?php if ($page == 'plot_videos') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('plot_videos'); ?>">
-          <i class="fa fa-location-arrow"></i>
+          <i class="fa fa-file-movie-o"></i>
           <span>Plot Videos</span>
         </a>
       </li>

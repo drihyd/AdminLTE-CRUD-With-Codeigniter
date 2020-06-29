@@ -27,7 +27,7 @@ class Home extends AUTH_Controller {
 			$data_posisi[$index]['value'] = $pegawai_by_posisi->jml;
 			$data_posisi[$index]['color'] = $color;
 			$data_posisi[$index]['highlight'] = $color;
-			$data_posisi[$index]['label'] = $value->nama;
+			$data_posisi[$index]['label'] = $value->owner_name;
 			
 			$index++;
 		}
@@ -37,12 +37,12 @@ class Home extends AUTH_Controller {
 		foreach ($kota as $value) {
 		    $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
 
-			$pegawai_by_kota = $this->M_pegawai->select_by_kota($value->id);
+			$pegawai_by_kota = $this->M_pegawai->select_by_kota($value->surveyid);
 
 			$data_kota[$index]['value'] = $pegawai_by_kota->jml;
 			$data_kota[$index]['color'] = $color;
 			$data_kota[$index]['highlight'] = $color;
-			$data_kota[$index]['label'] = $value->nama;
+			$data_kota[$index]['label'] = $value->owner_name;
 			
 			$index++;
 		}

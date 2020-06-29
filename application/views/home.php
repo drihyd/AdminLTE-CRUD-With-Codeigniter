@@ -12,32 +12,36 @@
       <a href="<?php echo base_url('customers') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
+
+
   <div class="col-lg-4 col-xs-6">
     <div class="small-box bg-green">
       <div class="inner">
         <h3><?php echo $jml_posisi; ?></h3>
 
-        <p>Number of Survey</p>
+        <p>Number of Plots</p>
       </div>
       <div class="icon">
         <i class="ion ion-ios-briefcase-outline"></i>
       </div>
-      <a href="<?php echo base_url('customers') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="<?php echo base_url('plots') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
-  <div class="col-lg-4 col-xs-6">
+    <div class="col-lg-4 col-xs-6">
     <div class="small-box bg-yellow">
       <div class="inner">
         <h3><?php echo $jml_kota; ?></h3>
 
-        <p>Number of Plots</p>
+        <p>Number of Survey</p>
       </div>
       <div class="icon">
         <i class="ion ion-location"></i>
       </div>
-      <a href="<?php echo base_url('customers') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="<?php echo base_url('survey') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
+
+
 
   <div class="col-lg-6 col-xs-12">
     <div class="box box-info">
