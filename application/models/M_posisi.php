@@ -6,7 +6,7 @@ class M_posisi extends CI_Model {
 	public function select_all() {
 
 
-		$sql = " SELECT users.id AS id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.state FROM users,plots WHERE users.id = plots.customer_id";
+		$sql = " SELECT users.id AS id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.pincode,plots.state FROM users,plots WHERE users.id = plots.customer_id";
 
 		$data = $this->db->query($sql);
 
@@ -42,6 +42,7 @@ class M_posisi extends CI_Model {
 			'village' => $data['village'],
 			'mandal' => $data['mandal'],
 			'district' => $data['district'],
+			'pincode' => $data['pincode'],
 			'authority' => $data['authority'],
 			'state' => $data['state'],
 			'created_date' => $timeStamp,
@@ -65,7 +66,7 @@ class M_posisi extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE plots SET state='" .$data['state'] ."',authority='" .$data['authority'] ."',district='" .$data['district'] ."',mandal='" .$data['mandal'] ."',survey_no='" .$data['survey_no'] ."',village='" .$data['village'] ."',address2='" .$data['address2'] ."',address1='" .$data['address1'] ."',customer_id='" .$data['customer_id'] ."',owner_name='" .$data['owner_name'] ."' WHERE id='" .$data['id'] ."'";
+		$sql = "UPDATE plots SET state='" .$data['state'] ."',authority='" .$data['authority'] ."',district='" .$data['district'] ."',pincode='" .$data['pincode'] ."',mandal='" .$data['mandal'] ."',survey_no='" .$data['survey_no'] ."',village='" .$data['village'] ."',address2='" .$data['address2'] ."',address1='" .$data['address1'] ."',customer_id='" .$data['customer_id'] ."',owner_name='" .$data['owner_name'] ."' WHERE id='" .$data['id'] ."'";
 
 		$this->db->query($sql);
 

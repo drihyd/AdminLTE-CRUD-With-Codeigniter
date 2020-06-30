@@ -35,6 +35,7 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('village', 'Village', 'trim|required');
 		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');
 		$this->form_validation->set_rules('district', 'District', 'trim|required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'trim|required');
 		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
 
@@ -74,6 +75,7 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('village', 'Village', 'trim|required');
 		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');
 		$this->form_validation->set_rules('district', 'District', 'trim|required');
+		$this->form_validation->set_rules('pincode', 'Pincode', 'trim|required');
 		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
 

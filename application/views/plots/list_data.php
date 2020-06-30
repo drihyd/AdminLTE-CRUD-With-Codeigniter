@@ -9,8 +9,8 @@
     <td><?php echo $posisi->address1; ?><br><?php echo $posisi->address2; ?></td>
     <td><?php echo $posisi->survey_no; ?></td>
     <td><?php echo $posisi->village; ?></td>
-    <td><?php echo $posisi->mandal; ?></td>
-    <td><?php echo $posisi->district; ?> - <?php echo $posisi->state; ?></td>
+    <td><?php echo $posisi->mandal; ?> - <?php echo $posisi->district; ?></td>
+    <td><?php echo $posisi->state; ?> - <?php echo $posisi->pincode; ?></td>
     <td><?php echo $posisi->authority; ?></td>
 
       <td class="text-center" style="min-width:230px;">

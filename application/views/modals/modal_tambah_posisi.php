@@ -65,6 +65,15 @@
       </span>
       <input type="text" class="form-control" placeholder="District" name="district" aria-describedby="sizing-addon2">
     </div>
+
+    <div class="input-group form-group">
+      <span class="input-group-addon" id="sizing-addon2">
+        <i class="glyphicon glyphicon-road"></i>
+      </span>
+      <input type="text" class="form-control" placeholder="Pincode" name="pincode" aria-describedby="sizing-addon2">
+    </div>
+
+
         <div class="input-group form-group">
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-pencil"></i>
