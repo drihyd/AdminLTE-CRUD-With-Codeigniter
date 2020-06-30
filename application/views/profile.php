@@ -7,7 +7,7 @@
 
         <h3 class="profile-username text-center"><?php echo $userdata->nama; ?></h3>
 
-        <p class="text-muted text-center">Web Developer</p>
+       <!--  <p class="text-muted text-center">Web Developer</p> -->
 
         <ul class="list-group list-group-unbordered">
           <li class="list-group-item">
@@ -22,7 +22,7 @@
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
-        <li><a href="#password" data-toggle="tab">Ubah Password</a></li>
+        <li><a href="#password" data-toggle="tab">Change Password</a></li>
       </ul>
       <div class="tab-content">
         <div class="active tab-pane" id="settings">
@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="inputFoto" class="col-sm-2 control-label">Foto</label>
+              <label for="inputFoto" class="col-sm-2 control-label">Photo</label>
               <div class="col-sm-10">
                 <input type="file" class="form-control" placeholder="Foto" name="foto">
               </div>
@@ -56,21 +56,21 @@
         <div class="tab-pane" id="password">
           <form class="form-horizontal" action="<?php echo base_url('Profile/ubah_password') ?>" method="POST">
             <div class="form-group">
-              <label for="passLama" class="col-sm-2 control-label">Password Lama</label>
+              <label for="passLama" class="col-sm-2 control-label">Old password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" placeholder="Password Lama" name="passLama">
+                <input type="password" class="form-control" placeholder="Old password" name="passLama">
               </div>
             </div>
             <div class="form-group">
-              <label for="passBaru" class="col-sm-2 control-label">Password Baru</label>
+              <label for="passBaru" class="col-sm-2 control-label">New Password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" placeholder="Password Baru" name="passBaru">
+                <input type="password" class="form-control" placeholder="New Password" name="passBaru">
               </div>
             </div>
             <div class="form-group">
-              <label for="passKonf" class="col-sm-2 control-label">Konfirmasi Password</label>
+              <label for="passKonf" class="col-sm-2 control-label">Confirm Password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" placeholder="Konfirmasi Password" name="passKonf">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="passKonf">
               </div>
             </div>
             

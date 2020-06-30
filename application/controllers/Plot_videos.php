@@ -19,7 +19,7 @@ class Plot_videos extends AUTH_Controller {
 		$data['judul'] 		= "Data Plot Videos";
 		$data['deskripsi'] 	= "Manage Data Plot Videos";
 
-		$data['modal_tambah_kota'] = show_my_modal('modals/modal_plots_add_photos', 'tambah-kota', $data);
+		$data['modal_tambah_kota'] = show_my_modal('modals/modal_plots_add_videos', 'tambah-kota', $data);
 
 		$this->template->views('plots_videos/home', $data);
 	}
@@ -34,16 +34,17 @@ class Plot_videos extends AUTH_Controller {
 	public function prosesTambah() {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
+		$this->form_validation->set_rules('file_path', 'File Path', 'trim|required');
 		
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
 
-
+			/*
 			$config['upload_path'] = './assets/plots_videos/';
 			$config['allowed_types'] = 'jpg|png';			
 			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('photo')){
+			if (!$this->upload->do_upload('file_path')){
 				$error = array('error' => $this->upload->display_errors());
 				
 			}
@@ -51,7 +52,7 @@ class Plot_videos extends AUTH_Controller {
 				$data_kml_file = $this->upload->data();
 				$data['file_path'] = $data_kml_file['file_name'];
 			}
-
+	*/
 			$result = $this->M_P_videos->insert($data);
 
 			if ($result > 0) {
@@ -74,12 +75,13 @@ class Plot_videos extends AUTH_Controller {
 		$id 				= trim($_POST['id']);
 		$data['dataKota'] 	= $this->M_P_videos->select_by_id($id);
 
-		echo show_my_modal('modals/modal_plots_update_photos', 'update-kota', $data);
+		echo show_my_modal('modals/modal_plots_update_videos', 'update-kota', $data);
 	}
 
 	public function prosesUpdate() {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
+		$this->form_validation->set_rules('file_path', 'File Path', 'trim|required');
 
 		//$this->form_validation->set_rules('kml_file', 'KML File', 'trim|required');
 
@@ -89,10 +91,12 @@ class Plot_videos extends AUTH_Controller {
 
 		if ($this->form_validation->run() == TRUE) {
 
+			/*
+
 			$config['upload_path'] = './assets/plots_videos/';
 			$config['allowed_types'] = 'jpg|png';			
 			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('photo')){
+			if (!$this->upload->do_upload('file_path')){
 				$error = array('error' => $this->upload->display_errors());
 				
 			}
@@ -101,7 +105,7 @@ class Plot_videos extends AUTH_Controller {
 				$data['file_path'] = $data_kml_file['file_name'];
 			}
 
-
+		*/
 
 			$result = $this->M_P_videos->update($data);
 

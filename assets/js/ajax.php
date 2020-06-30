@@ -13,6 +13,7 @@
 		tampilPosisi();
 		tampilKota();
 		plotsPhotos();
+		plotsVideos();
 		<?php
 			if ($this->session->flashdata('msg') != '') {
 				echo "effect_msg();";
@@ -262,6 +263,131 @@ xhr.send(formdata);
 	
 	
 	
+	
+	/*** Plot Videos ***/
+	
+
+	function plotsVideos() {
+		$.get('<?php echo base_url('plot_videos/tampil'); ?>', function(data) {
+			MyTable.fnDestroy();
+			$('#data-plot-videos').html(data);
+			refresh();
+		});
+	}
+	
+	
+	
+	var id_videos;
+	$(document).on("click", ".plot_videos-delete-kota", function() {
+		id_videos = $(this).attr("data-id");
+	})
+	$(document).on("click", ".clear-videos-data", function() {
+		var id = id_videos;
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('plot_videos/delete'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			$('#plot_videos-delete').modal('hide');
+			plotsVideos();
+			$('.msg').html(data);
+			effect_msg();
+		})
+	})
+	
+	
+		$(document).on("click", ".update-plot-video", function() {
+		var id = $(this).attr("data-id");
+		
+		$.ajax({
+			method: "POST",
+			url: "<?php echo base_url('plot_videos/update'); ?>",
+			data: "id=" +id
+		})
+		.done(function(data) {
+			
+			$('#tempat-modal').html(data);
+			$('#update-kota').modal('show');
+		})
+	})
+	
+	
+	
+	$(document).ready(function() {
+
+		$(document).on('submit', '#form-plot-videos-add', function(e){
+		
+		e.preventDefault();
+		
+		
+		var form = document.getElementById('form-plot-videos-add'); //id of form
+var formdata = new FormData(form);
+var xhr = new XMLHttpRequest();
+xhr.open('POST','<?php echo base_url('plot_videos/prosesTambah'); ?>',true);
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+//if you have included the setRequestHeader remove that line as you need the 
+// multipart/form-data as content type.
+xhr.onload = function(){
+	
+	console.log(xhr.responseText);
+	var out = jQuery.parseJSON(xhr.responseText);
+
+		
+			plotsVideos();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-plot-videos-add").reset();
+				$('#tambah-kota').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+ 
+}
+xhr.send(formdata);
+e.preventDefault();
+	});
+
+
+
+	
+	$(document).on('submit', '#form-plots-videos-kota', function(e){
+		e.preventDefault();
+		//var postdata = $(this).serializeArray();
+var form = document.getElementById('form-plots-videos-kota'); //id of form
+var formdata = new FormData(form);
+var xhr = new XMLHttpRequest();
+xhr.open('POST','<?php echo base_url('plot_videos/prosesUpdate'); ?>',true);
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+//if you have included the setRequestHeader remove that line as you need the 
+// multipart/form-data as content type.
+xhr.onload = function(){
+	var out = jQuery.parseJSON(xhr.responseText);
+
+			plotsVideos();
+			if (out.status == 'form') {
+				$('.form-msg').html(out.msg);
+				effect_msg_form();
+			} else {
+				document.getElementById("form-plots-videos-kota").reset();
+				$('#update-kota').modal('hide');
+				$('.msg').html(out.msg);
+				effect_msg();
+			}
+ 
+}
+xhr.send(formdata);
+
+	e.preventDefault();
+	});
+	
+	});
+	
+	
+	/*** End ***/
 
 	//Kota
 	function tampilKota() {

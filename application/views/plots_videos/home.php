@@ -25,11 +25,11 @@ Add Data</button>
           <th>#</th>
           <th>Customer</th>
           <th>Plot Owner</th>
-          <th>Photo</th>
+          <th>File</th>
           <th style="text-align: center;">Action</th>
         </tr>
       </thead>
-      <tbody id="data-plot-photos">
+      <tbody id="data-plot-videos">
       
       </tbody>
     </table>
@@ -40,7 +40,7 @@ Add Data</button>
 
 <div id="tempat-modal"></div>
 
-<?php show_my_confirm('plot_photos-delete', 'clear-photos-data', 'Delete This Data?', 'Ya, Delete This Data'); ?>
+<?php show_my_confirm('plot_videos-delete', 'clear-videos-data', 'Delete This Data?', 'Ya, Delete This Data'); ?>
 <?php
   $data['judul'] = 'Kota';
   $data['url'] = 'Kota/import';

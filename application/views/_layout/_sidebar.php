@@ -61,6 +61,13 @@
         </a>
       </li>
 	  
+	  	  	    <li <?php if ($page == 'logout') {echo 'class="active"';} ?>>
+        <a href="<?php echo base_url('Auth/logout'); ?>">
+          <i class="fa fa-sign-out"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+	  
 	  
     </ul>
     <!-- /.sidebar-menu -->
