@@ -39,10 +39,10 @@ class Profile extends AUTH_Controller {
 			$result = $this->M_admin->update($data, $id);
 			if ($result > 0) {
 				$this->updateProfil();
-				$this->session->set_flashdata('msg', show_succ_msg('Data Profile Berhasil diubah'));
+				$this->session->set_flashdata('msg', show_succ_msg('Data Profile Successfully changed'));
 				redirect('Profile');
 			} else {
-				$this->session->set_flashdata('msg', show_err_msg('Data Profile Gagal diubah'));
+				$this->session->set_flashdata('msg', show_err_msg('Profile Data Failed to change'));
 				redirect('Profile');
 			}
 		} else {
@@ -60,7 +60,7 @@ class Profile extends AUTH_Controller {
 		if ($this->form_validation->run() == TRUE) {
 			if (md5($this->input->post('passLama')) == $this->userdata->password) {
 				if ($this->input->post('passBaru') != $this->input->post('passKonf')) {
-					$this->session->set_flashdata('msg', show_err_msg('Password Baru dan Konfirmasi Password harus sama'));
+					$this->session->set_flashdata('msg', show_err_msg('New Password and Confirm Password must be the same'));
 					redirect('Profile');
 				} else {
 					$data = [
@@ -70,15 +70,15 @@ class Profile extends AUTH_Controller {
 					$result = $this->M_admin->update($data, $id);
 					if ($result > 0) {
 						$this->updateProfil();
-						$this->session->set_flashdata('msg', show_succ_msg('Password Berhasil diubah'));
+						$this->session->set_flashdata('msg', show_succ_msg('Password successfully changed'));
 						redirect('Profile');
 					} else {
-						$this->session->set_flashdata('msg', show_err_msg('Password Gagal diubah'));
+						$this->session->set_flashdata('msg', show_err_msg('Password Failed to change'));
 						redirect('Profile');
 					}
 				}
 			} else {
-				$this->session->set_flashdata('msg', show_err_msg('Password Salah'));
+				$this->session->set_flashdata('msg', show_err_msg('Password wrong'));
 				redirect('Profile');
 			}
 		} else {

@@ -10,7 +10,8 @@
 
      <td> 
 <?php if(!empty($kota->photo)) {?>
-      <a target="_new" href="./assets/plots_photos/<?php echo ucfirst($kota->photo); ?>"><i class="glyphicon glyphicon-download-alt"></i></a>
+<img src="./assets/plots_photos/<?php echo $kota->photo; ?>" class="img-fluid rounded" style="width:104px;height:auto;"/>
+      <a target="_new" href="./assets/plots_photos/<?php echo $kota->photo; ?>"><i class="glyphicon glyphicon-download-alt"></i></a>
     <?php } ?>
       </td>
       <td class="text-center" style="min-width:230px;">

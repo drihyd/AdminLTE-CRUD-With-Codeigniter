@@ -10,7 +10,7 @@
 
      <td> 
 <?php if(!empty($kota->photo)) {?>
-      <a target="_new" href="<?php echo ucfirst($kota->photo); ?>"><i class="glyphicon glyphicon-download-alt"></i></a>
+      <a target="_new" href="<?php echo $kota->photo; ?>"><i class="glyphicon glyphicon-download-alt"></i></a>
     <?php } ?>
       </td>
       <td class="text-center" style="min-width:230px;">
