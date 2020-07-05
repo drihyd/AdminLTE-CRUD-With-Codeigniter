@@ -7,7 +7,7 @@
     <input type="hidden" name="id" value="<?php echo $dataKota->id; ?>">
     
 
- <div class="input-group form-group">
+ <div class="input-group form-group-sm">
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-user"></i>
       </span>    
@@ -15,7 +15,7 @@
 
 
 
-      <select class="form-control" placeholder="Customer" name="customer_id" aria-describedby="sizing-addon2">
+      <select class="form-control get_plots_ajax" placeholder="Customer" name="customer_id" aria-describedby="sizing-addon2">
   <option value="">--Select Customer--</option>
 <?php
   foreach ($this->dataCustomers as $Cust_item) { ?>
@@ -29,7 +29,7 @@
 
 
 
-        <div class="input-group form-group">
+        <div class="input-group form-group-sm">
   <span class="input-group-addon" id="sizing-addon2">
   <i class="glyphicon glyphicon-road"></i>
   </span>
@@ -49,30 +49,31 @@
   </div>
 
 
-        <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-time"></i>
-      </span>
-      <input type="date" class="form-control" placeholder="Date of survey" name="date_of_survey" aria-describedby="sizing-addon2" value="<?php echo $dataKota->date_of_survey; ?>">
+
+  <div class="form-group-sm ">
+<div class="row">
+<div class="col-md-6">
+<label>Date of survey</label>     
+<input type="date" class="form-control" placeholder="Date of survey" name="date_of_survey" aria-describedby="sizing-addon2" value="<?php echo $dataKota->date_of_survey; ?>">
+</div>
+<div class="col-md-6">
+<label>Date of report</label>     
+<input type="date" class="form-control" placeholder="Date of report" name="date_of_report" aria-describedby="sizing-addon2" value="<?php echo $dataKota->date_of_report; ?>">
+</div>
+</div>	   
+</div>
+
+
+
+    <div class="form-group-sm">
+	<label>KML File</label>
+   
+      <input type="file" class="form-control" placeholder="KML File" name="kml_file" id="kml_file" aria-describedby="sizing-addon2" >
+	  
     </div>
 
 
-            <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-time"></i>
-      </span>
-      <input type="date" class="form-control" placeholder="Date of report" name="date_of_report" aria-describedby="sizing-addon2" value="<?php echo $dataKota->date_of_report; ?>">
-    </div>
-
-        <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-file"></i>
-      </span>
-      <input type="file" class="form-control" placeholder="KML File" name="kml_file" id="kml_file" aria-describedby="sizing-addon2" required="required">
-    </div>
-
-
-    <div class="form-group">
+    <div class="form-group-sm">
       <div class="col-md-12">
           <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Update Data</button>
       </div>

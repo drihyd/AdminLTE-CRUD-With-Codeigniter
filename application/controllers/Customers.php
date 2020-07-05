@@ -32,7 +32,10 @@ class Customers extends AUTH_Controller {
 		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		$this->form_validation->set_rules('contact_no', 'Phone', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		//$this->form_validation->set_rules('password', 'Password', 'required|matches[confirm_password]|min_length[8]|alpha_numeric');
+		//$this->form_validation->set_rules('password', 'Password', 'required|trim|matches[confirm_password]');
+		$this->form_validation->set_rules('password', 'New Password', 'trim|required|min_length[8]|alpha_numeric');
+        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|matches[password]|min_length[8]|alpha_numeric');
 		
 		$data = $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
@@ -69,7 +72,7 @@ class Customers extends AUTH_Controller {
 		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		$this->form_validation->set_rules('contact_no', 'Phone', 'trim|required');
-		$this->form_validation->set_rules('address', 'Address', 'trim|required');
+		//$this->form_validation->set_rules('address', 'Address', 'trim|required');
 		
 		
 

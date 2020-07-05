@@ -31,6 +31,19 @@ defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
 defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
 defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
 
+define('DB_HOSTNAME', 'localhost');
+/*
+define('DB_USERNAME', 'securemyplot_securemyplot');
+define('DB_PASSWORD', 'Nv(Iy)lZgUWI');
+define('DB_NAME', 'securemyplot_securemyplot');
+*/
+
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'securemyplot');
+
+define('SITENAME', 'Secure My Plot');
+
 /*
 |--------------------------------------------------------------------------
 | File Stream Modes
@@ -82,4 +95,6 @@ defined('EXIT_UNKNOWN_METHOD') OR define('EXIT_UNKNOWN_METHOD', 6); // unknown c
 defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user input
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
-defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error 
+
+

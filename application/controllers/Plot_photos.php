@@ -41,7 +41,7 @@ class Plot_photos extends AUTH_Controller {
 
 
 			$config['upload_path'] = './assets/plots_photos/';
-			$config['allowed_types'] = 'jpg|png';			
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('photo')){
 				$error = array('error' => $this->upload->display_errors());
@@ -90,7 +90,7 @@ class Plot_photos extends AUTH_Controller {
 		if ($this->form_validation->run() == TRUE) {
 
 			$config['upload_path'] = './assets/plots_photos/';
-			$config['allowed_types'] = 'jpg|png';			
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('photo')){
 				$error = array('error' => $this->upload->display_errors());

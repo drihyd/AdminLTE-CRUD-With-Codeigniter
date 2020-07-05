@@ -25,6 +25,7 @@
           <th>Customer Name</th>
           <th>Owner Name</th>
           <th>Address</th>
+		  <th>Plot No.</th>
           <th>Survey No.</th>
           <th>Villate</th>
           <th>Mandal</th>
