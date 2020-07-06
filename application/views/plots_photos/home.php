@@ -26,6 +26,7 @@ Add Data</button>
           <th>Customer</th>
           <th>Plot Owner</th>
           <th>Photo</th>
+          <th>Description</th>
           <th style="text-align: center;">Action</th>
         </tr>
       </thead>

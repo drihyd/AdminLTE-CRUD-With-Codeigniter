@@ -40,6 +40,10 @@
       </span>
       <input type="file" class="form-control" placeholder="Photo" name="photo" id="photo" required="required">
     </div>
+    <div class="form-group-sm">
+  <label>Description</label>     
+     <input type="text" class="form-control" placeholder="Description" name="description" aria-describedby="sizing-addon2">
+    </div>
    
 
     <div class="form-group-sm">

@@ -14,6 +14,7 @@
       <a target="_new" href="./assets/plots_photos/<?php echo $kota->photo; ?>"><i class="glyphicon glyphicon-new-window"></i></a>
     <?php } ?>
       </td>
+      <td> <?php echo ucfirst($kota->description); ?></td>
       <td class="text-center" style="min-width:230px;">
           <button class="btn btn-warning update-plot-photo" data-id="<?php echo $kota->plots_photosid; ?>"><i class="glyphicon glyphicon-pencil"></i></button>
           <button class="btn btn-danger plot_photos-delete-kota" data-id="<?php echo $kota->plots_photosid; ?>" data-toggle="modal" data-target="#plot_photos-delete"><i class="glyphicon glyphicon-remove-sign"></i></button>

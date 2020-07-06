@@ -59,6 +59,13 @@
       <input type="text" class="form-control" placeholder="Video Path" name="file_path" id="file_path" aria-describedby="sizing-addon2"  value="<?php echo $dataKota->file_path;?>" required="required">
     </div>
 
+    <div class="form-group-sm">
+      <label>Description</label>
+
+<textarea id="w3review" name="description" rows="3" class="form-control" ><?php echo $dataKota->description;?>
+</textarea>
+    </div>
+
 
     <div class="form-group-sm">
       <div class="col-md-12">

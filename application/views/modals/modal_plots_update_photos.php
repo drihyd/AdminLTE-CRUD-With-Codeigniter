@@ -58,6 +58,11 @@
       <input type="file" class="form-control" placeholder="KML File" name="photo" id="photo" aria-describedby="sizing-addon2" >
     </div>
 
+    <div class="form-group-sm">
+  <label>Description</label>     
+     <input type="text" class="form-control" placeholder="Description" name="description" aria-describedby="sizing-addon2" value="<?php echo $dataKota->description; ?>">
+    </div>
+
 
     <div class="form-group-sm">
       <div class="col-md-12">

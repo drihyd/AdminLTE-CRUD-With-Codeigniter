@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_P_phots extends CI_Model {
 	public function select_all() {
-		$sql = " SELECT users.id AS user_id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.state,plots_photos.id as plots_photosid,plots_photos.photo as photo FROM users,plots,plots_photos WHERE plots_photos.plot_id = plots.id and plots.customer_id = users.id";
+		$sql = " SELECT users.id AS user_id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.state,plots_photos.description,plots_photos.id as plots_photosid,plots_photos.photo as photo FROM users,plots,plots_photos WHERE plots_photos.plot_id = plots.id and plots.customer_id = users.id";
 		$data = $this->db->query($sql);
 		return $data->result();
 	}
@@ -31,6 +31,7 @@ class M_P_phots extends CI_Model {
 			'customer_id' => $data['customer_id'],
 			'plot_id' => $data['plot_id'],
 			'photo' => $data['photo'],
+			'description' => $data['description'],
 			'created_date' => $timeStamp,
 			'modified_date' => $timeStamp
 
@@ -56,7 +57,7 @@ class M_P_phots extends CI_Model {
 	public function update($data) {
 
 
-	$sql = "UPDATE plots_photos SET customer_id='".$data['customer_id']."',plot_id ='".$data['plot_id']."',photo='".$data['photo']."' WHERE id='".$data['id'] ."'";
+	$sql = "UPDATE plots_photos SET customer_id='".$data['customer_id']."',plot_id ='".$data['plot_id']."',description ='".$data['description']."',photo='".$data['photo']."' WHERE id='".$data['id'] ."'";
 	//echo $this->db->last_query(); 
 
 		$this->db->query($sql);
