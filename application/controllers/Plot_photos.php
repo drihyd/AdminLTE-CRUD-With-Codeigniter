@@ -34,32 +34,45 @@ class Plot_photos extends AUTH_Controller {
 	public function prosesTambah() {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
+		//$this->form_validation->set_rules('photo', 'Photo', 'xss_clean|required');
+	
+		
 		
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
 
-
-			$config['upload_path'] = './assets/plots_photos/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			
+			$config['upload_path'] = 'assets/plots_photos/';
+			$config['allowed_types'] = 'jpg|gif|png|jpeg|JPG|PNG';	
 			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
 			if (!$this->upload->do_upload('photo')){
 				$error = array('error' => $this->upload->display_errors());
+				$out['status'] = '';
+				$out['msg'] = show_succ_msg('Plot Photo Data Failed to update'.json_encode($error), '20px');
+				$data['photo'] = '';
+				$result=0;
+				
 				
 			}
 			else{
+				
 				$data_kml_file = $this->upload->data();
 				$data['photo'] = $data_kml_file['file_name'];
+				$result = $this->M_P_phots->insert($data);
 			}
 
-			$result = $this->M_P_phots->insert($data);
+
+
+			
 
 			if ($result > 0) {
 				$out['status'] = '';
 				$out['msg'] = show_succ_msg('Plot Photo Data Successfully added', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_err_msg('Plot Photo Failed Data added', '20px');
+				$out['msg'] = show_err_msg('Plot Photo Failed Data added'.json_encode($error), '20px');
 			}
 		} else {
 			$out['status'] = 'form';
@@ -81,7 +94,6 @@ class Plot_photos extends AUTH_Controller {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
 
-		//$this->form_validation->set_rules('kml_file', 'KML File', 'trim|required');
 
 		$data 	= $this->input->post();
 
@@ -89,28 +101,34 @@ class Plot_photos extends AUTH_Controller {
 
 		if ($this->form_validation->run() == TRUE) {
 
-			$config['upload_path'] = './assets/plots_photos/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$config['upload_path'] = 'assets/plots_photos/';
+			$config['allowed_types'] = 'jpg|gif|png|jpeg|JPG|PNG';			
 			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
 			if (!$this->upload->do_upload('photo')){
+				
 				$error = array('error' => $this->upload->display_errors());
+				$out['status'] = '';
+				$out['msg'] = show_succ_msg('Plot Photo Data Failed to update', '20px');
+				$data['photo'] = '';
 				
 			}
 			else{
 				$data_kml_file = $this->upload->data();
 				$data['photo'] = $data_kml_file['file_name'];
+				$result = $this->M_P_phots->update($data);
 			}
 
 
 
-			$result = $this->M_P_phots->update($data);
+			
 
 			if ($result > 0) {
 				$out['status'] = '';
 				$out['msg'] = show_succ_msg('Plot Photo Data Successfully updated', '20px');
 			} else {
 				$out['status'] = '';
-				$out['msg'] = show_succ_msg('Plot Photo Data Failed to update', '20px');
+				$out['msg'] = show_succ_msg('Plot Photo Data Failed to update'.json_encode($error), '20px');
 			}
 		} else {
 			$out['status'] = 'form';

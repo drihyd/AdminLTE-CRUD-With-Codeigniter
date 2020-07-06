@@ -55,7 +55,7 @@
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-file"></i>
       </span>
-      <input type="file" class="form-control" placeholder="KML File" name="photo" id="photo" aria-describedby="sizing-addon2">
+      <input type="file" class="form-control" placeholder="KML File" name="photo" id="photo" aria-describedby="sizing-addon2" >
     </div>
 
 

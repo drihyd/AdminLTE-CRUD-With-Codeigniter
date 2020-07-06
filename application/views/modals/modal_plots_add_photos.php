@@ -38,7 +38,7 @@
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-file"></i>
       </span>
-      <input type="file" class="form-control" placeholder="Photo" name="photo" aria-describedby="sizing-addon2" required="required">
+      <input type="file" class="form-control" placeholder="Photo" name="photo" id="photo" required="required">
     </div>
    
 
