@@ -120,6 +120,19 @@
 </div>
 </div>	   
 </div>
+
+<div class="form-group-sm ">
+<div class="row">
+<div class="col-md-6">
+<label>Price *</label>     
+<input type="text" class="form-control" placeholder="Price" name="price" aria-describedby="sizing-addon2" value="<?php echo $dataPosisi->price; ?>">
+</div>
+<div class="col-md-6">
+<label></label>     
+
+</div>
+</div>     
+</div>
 <div class="form-group-sm">
   <label>Upload Map</label>
    
@@ -127,6 +140,26 @@
     
     </div>
 	
+
+
+<div class="form-group-sm ">
+<div class="row">
+<div class="col-md-12">
+<label>Limiations</label>     
+<textarea class="form-control" placeholder="Limiations" name="limiations" aria-describedby="sizing-addon2" ><?php echo $dataPosisi->limiations; ?></textarea>
+</div>
+</div>     
+</div>
+
+
+<div class="form-group-sm ">
+<div class="row">
+<div class="col-md-12">
+<label>Eco.Landscape</label>
+<textarea class="form-control" placeholder="Eco.Landscape" name="eco_landscape" aria-describedby="sizing-addon2"><?php echo $dataPosisi->eco_landscape; ?></textarea>
+</div>
+</div>     
+</div>
 
   <div class="form-group-sm">
       <div class="col-md-12">

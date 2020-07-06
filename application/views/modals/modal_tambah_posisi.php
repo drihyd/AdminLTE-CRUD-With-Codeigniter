@@ -116,23 +116,48 @@
 </div>
 </div>     
 </div>
+
+<div class="form-group-sm ">
+<div class="row">
+<div class="col-md-6">
+<label>Price *</label>     
+<input type="text" class="form-control" placeholder="Price" name="price" aria-describedby="sizing-addon2">
+</div>
+<div class="col-md-6">
+<label></label>     
+
+</div>
+</div>     
+</div>
+
 <div class="form-group-sm">
-  <label>Upload Map</label>
-   
-      <input type="file" class="form-control" placeholder="upload map" name="plot_map" aria-describedby="sizing-addon2" >
-    
+  <label>Upload Map</label>   
+      <input type="file" class="form-control" placeholder="upload map" name="plot_map" aria-describedby="sizing-addon2">    
     </div>
+	
+	<div class="form-group-sm ">
+<div class="row">
+<div class="col-md-12">
+<label>Limiations</label>     
+<textarea class="form-control" placeholder="Limiations" name="limiations" aria-describedby="sizing-addon2" value="<?php echo $dataPosisi->limiations; ?>"></textarea>
+</div>
+</div>     
+</div>
 
 
+<div class="form-group-sm ">
+<div class="row">
+<div class="col-md-12">
+<label>Eco.Landscape</label>
+<textarea class="form-control" placeholder="Eco.Landscape" name="eco_landscape" aria-describedby="sizing-addon2" value="<?php echo $dataPosisi->eco_landscape; ?>"></textarea>
+</div>
+</div>     
+</div>
 
-
-
-    <div class="form-group-sm">
+   <div class="form-group-sm">
       <div class="col-md-12">
           <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Add Data</button>
       </div>
     </div>
-
-
   </form>
 </div>

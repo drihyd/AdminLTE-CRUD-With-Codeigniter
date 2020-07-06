@@ -27,7 +27,7 @@
           <th>Address</th>
 		      <th>Plot No.</th>
           <th>Survey No.</th>
-          <th>Villate</th>
+          <th>Village</th>
           <th>Mandal</th>
           <th>District</th>
           <th>Authority</th>

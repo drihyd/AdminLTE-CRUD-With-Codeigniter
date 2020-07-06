@@ -29,7 +29,7 @@ class Customers extends AUTH_Controller {
 
 	public function prosesTambah() {
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
-		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+		//$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		//$this->form_validation->set_rules('contact_no', 'Phone', 'trim|required');
 		//$this->form_validation->set_rules('password', 'Password', 'required|matches[confirm_password]|min_length[8]|alpha_numeric');
@@ -69,7 +69,7 @@ class Customers extends AUTH_Controller {
 
 	public function prosesUpdate() {
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
-		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+		//$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		//$this->form_validation->set_rules('contact_no', 'Phone', 'trim|required');
 		//$this->form_validation->set_rules('address', 'Address', 'trim|required');

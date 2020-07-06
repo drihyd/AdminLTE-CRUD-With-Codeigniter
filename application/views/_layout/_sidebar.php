@@ -50,7 +50,7 @@
 	    <li <?php if ($page == 'plot_photos') {echo 'class="active"';} ?>>
         <a href="<?php echo base_url('plot_photos'); ?>">
           <i class="fa fa-picture-o"></i>
-          <span>Plot Phots</span>
+          <span>Plot Photos</span>
         </a>
       </li>
 	  
