@@ -3,7 +3,7 @@
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <h3 style="display:block; text-align:center;">Add plot data</h3>
 
-  <form id="form-tambah-posisi" method="POST">
+  <form id="form-tambah-posisi" method="POST" enctype="multipart/form-data">
 	
 	
 	<div class="form-group-sm">

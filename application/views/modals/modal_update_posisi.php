@@ -3,7 +3,7 @@
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <h3 style="display:block; text-align:center;">Plot Data Update</h3>
 
-  <form id="form-update-posisi" method="POST">
+  <form id="form-update-posisi" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $dataPosisi->id; ?>">
 	
 	

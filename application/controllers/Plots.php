@@ -102,14 +102,15 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
 		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
 		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
-		$this->form_validation->set_rules('plot_map', 'Plot Map', 'trim|required');
+		//$this->form_validation->set_rules('plot_map', 'Plot Map', 'required');
 
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
-			$config['upload_path'] = './assets/plot_map/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$config['upload_path'] = 'assets/plot_map/';
+			$config['allowed_types'] = 'jpg|gif|png|jpeg|JPG|PNG|JPEG';			
 			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
 			if (!$this->upload->do_upload('plot_map')){
 				$error = array('error' => $this->upload->display_errors());
 				
@@ -118,6 +119,7 @@ class Plots extends AUTH_Controller {
 				$data_plot_map = $this->upload->data();
 				$data['plot_map'] = $data_plot_map['file_name'];
 			}
+
 			$result = $this->M_posisi->update($data);
 
 			if ($result > 0) {
