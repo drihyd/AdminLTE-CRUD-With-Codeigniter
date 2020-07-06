@@ -29,8 +29,8 @@ class Survey extends AUTH_Controller {
 	}
 
 	public function prosesTambah() {
-		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
-		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
+		$this->form_validation->set_rules('customer_id', 'Customer', 'trim|required');
+		$this->form_validation->set_rules('plot_id', 'Plot', 'trim|required');
 		$this->form_validation->set_rules('date_of_survey', 'Date of surver', 'trim|required');
 		$this->form_validation->set_rules('date_of_report', 'Date of report', 'trim|required');
 	
@@ -40,7 +40,7 @@ class Survey extends AUTH_Controller {
 
 
 			$config['upload_path'] = './assets/kml_files/';
-			$config['allowed_types'] = 'jpg|png|PNG';			
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('kml_file')){
 				$error = array('error' => $this->upload->display_errors());
@@ -77,8 +77,8 @@ class Survey extends AUTH_Controller {
 	}
 
 	public function prosesUpdate() {
-		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
-		$this->form_validation->set_rules('plot_id', 'Plot Id', 'trim|required');
+		$this->form_validation->set_rules('customer_id', 'Customer', 'trim|required');
+		$this->form_validation->set_rules('plot_id', 'Plot', 'trim|required');
 		$this->form_validation->set_rules('date_of_survey', 'Date of surver', 'trim|required');
 		$this->form_validation->set_rules('date_of_report', 'Date of report', 'trim|required');
 		//$this->form_validation->set_rules('kml_file', 'KML File', 'trim|required');
@@ -90,7 +90,7 @@ class Survey extends AUTH_Controller {
 		if ($this->form_validation->run() == TRUE) {
 
 			$config['upload_path'] = './assets/kml_files/';
-			$config['allowed_types'] = 'jpg|png|PNG';			
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('kml_file')){
 				$error = array('error' => $this->upload->display_errors());

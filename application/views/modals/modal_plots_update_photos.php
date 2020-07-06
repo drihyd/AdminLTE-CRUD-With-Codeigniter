@@ -7,7 +7,7 @@
     <input type="hidden" name="id" value="<?php echo $dataKota->id; ?>">
     
 
- <div class="input-group form-group">
+ <div class="input-group form-group-sm">
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-user"></i>
       </span>    
@@ -15,7 +15,7 @@
 
 
 
-      <select class="form-control" placeholder="Customer" name="customer_id" aria-describedby="sizing-addon2">
+      <select class="form-control get_plots_ajax" placeholder="Customer" name="customer_id" aria-describedby="sizing-addon2" required="required">
   <option value="">--Select Customer--</option>
 <?php
   foreach ($this->dataCustomers as $Cust_item) { ?>
@@ -29,13 +29,13 @@
 
 
 
-        <div class="input-group form-group">
+        <div class="input-group form-group-sm">
   <span class="input-group-addon" id="sizing-addon2">
   <i class="glyphicon glyphicon-road"></i>
   </span>
 
 
-      <select class="form-control" placeholder="Plot" name="plot_id" aria-describedby="sizing-addon2">
+      <select class="form-control" placeholder="Plot" name="plot_id" aria-describedby="sizing-addon2" required="required">
   <option value="">--Select Plot Owner--</option>
 <?php
   foreach ($this->dataPlots as $Plot_item) { ?>
@@ -51,15 +51,15 @@
 
  
 
-        <div class="input-group form-group">
+        <div class="input-group form-group-sm">
       <span class="input-group-addon" id="sizing-addon2">
         <i class="glyphicon glyphicon-file"></i>
       </span>
-      <input type="file" class="form-control" placeholder="KML File" name="photo" id="photo" aria-describedby="sizing-addon2" required="required">
+      <input type="file" class="form-control" placeholder="KML File" name="photo" id="photo" aria-describedby="sizing-addon2">
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group-sm">
       <div class="col-md-12">
           <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Update Data</button>
       </div>

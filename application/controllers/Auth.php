@@ -48,6 +48,13 @@ class Auth extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('Auth');
 	}
+	
+	public function myformAjax($id=false,$table_name=false){ 
+		$table_name="plots";
+		$order_by="owner_name";
+        $result = $this->db->select('owner_name as name,id')->where("customer_id ",$id)->order_by($order_by,"asc")->get($table_name)->result();
+        echo json_encode($result);
+    }
 }
 
 /* End of file Login.php */

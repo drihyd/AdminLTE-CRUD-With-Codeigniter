@@ -22,11 +22,11 @@
     <table id="list-data" class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th>S.No.</th>
+          <th style="width:20px;">S.No.</th>
           <th>Full Name</th>
           <th>Email</th>
           <th>Phone</th>
-		  <th>Address</th>
+		  <!--<th>Address</th>-->
           <th style="text-align: center;">Actions</th>
         </tr>
       </thead>

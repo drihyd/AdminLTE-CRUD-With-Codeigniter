@@ -4,11 +4,11 @@
   <h3 style="display:block; text-align:center;">Add survey data</h3>
 
   <form id="form-tambah-kota" class="form-tambah-kota" method="POST" enctype="multipart/form-data">
-  <div class="input-group form-group">
+  <div class="input-group form-group-sm">
   <span class="input-group-addon" id="sizing-addon2">
   <i class="glyphicon glyphicon-user"></i>
   </span>
-  <select class="form-control" placeholder="Customer" name="customer_id" aria-describedby="sizing-addon2">
+  <select class="form-control get_plots_ajax" placeholder="Customer" name="customer_id" aria-describedby="sizing-addon2">
   <option value="">--Select Customer--</option>
   <?php
   foreach ($this->dataCustomers as $Cust_item) {
@@ -18,43 +18,48 @@
   </select>
   </div>
 
-    <div class="input-group form-group">
+    <div class="input-group form-group-sm">
   <span class="input-group-addon" id="sizing-addon2">
   <i class="glyphicon glyphicon-road"></i>
   </span>
   <select class="form-control" placeholder="Plot" name="plot_id" aria-describedby="sizing-addon2">
   <option value="">--Select Plot Owner--</option>
   <?php
+  
   foreach ($this->dataPlots as $Plot_item) {
   echo "<option value=".$Plot_item->id.">".ucfirst($Plot_item->owner_name)."</option>";
   }
   ?>
   </select>
   </div>
+  
+  
+  
+  <div class="form-group-sm ">
+<div class="row">
+<div class="col-md-6">
+<label>Date of survey</label>     
+<input type="date" class="form-control" placeholder="Date of survey" name="date_of_survey" aria-describedby="sizing-addon2">
+</div>
+<div class="col-md-6">
+<label>Date of report</label>     
+<input type="date" class="form-control" placeholder="Date of report" name="date_of_report" aria-describedby="sizing-addon2">
+</div>
+</div>	   
+</div>
 
-        <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-time"></i>
-      </span>
-      <input type="date" class="form-control" placeholder="Date of survey" name="date_of_survey" aria-describedby="sizing-addon2">
-    </div>
 
-            <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-time"></i>
-      </span>
-      <input type="date" class="form-control" placeholder="Date of report" name="date_of_report" aria-describedby="sizing-addon2">
-    </div>
 
-    <div class="input-group form-group">
-      <span class="input-group-addon" id="sizing-addon2">
-        <i class="glyphicon glyphicon-file"></i>
-      </span>
-      <input type="file" class="form-control" placeholder="KML File" name="kml_file" aria-describedby="sizing-addon2" required="required">
+
+    <div class="form-group-sm">
+	<label>KML File</label>
+   
+      <input type="file" class="form-control" placeholder="KML File" name="kml_file" aria-describedby="sizing-addon2" >
+	  
     </div>
    
 
-    <div class="form-group">
+    <div class="form-group-sm">
       <div class="col-md-12">
           <button type="submit" class="form-control btn btn-primary"> <i class="glyphicon glyphicon-ok"></i> Add Data</button>
       </div>

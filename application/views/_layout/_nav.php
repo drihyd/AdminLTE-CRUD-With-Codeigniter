@@ -13,7 +13,7 @@
           <!-- The user image in the navbar-->
           <img src="<?php echo base_url(); ?>assets/img/<?php echo $userdata->foto; ?>" class="user-image" alt="User Image">
           <!-- hidden-xs hides the username on small devices so only the image appears. -->
-          <span class="hidden-xs"><?php echo $userdata->nama; ?></span>
+          <span class="hidden-xs"><?php //echo ucfirst($userdata->nama); ?><i class="fa fa-caret-down" aria-hidden="true"></i></span>
         </a>
         <ul class="dropdown-menu">
           <!-- The user image in the menu -->
@@ -21,8 +21,9 @@
             <img src="<?php echo base_url(); ?>assets/img/<?php echo $userdata->foto; ?>" class="img-circle" alt="User Image">
 
             <p>
-              <?php echo $userdata->nama; ?> 
-              <small></small>
+			 <small>
+              <?php echo ucfirst($userdata->nama); ?> 
+             </small>
             </p>
           </li>
           <!-- Menu Footer-->

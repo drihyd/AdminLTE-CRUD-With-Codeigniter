@@ -84,6 +84,13 @@ class M_P_videos extends CI_Model {
 
 		return $data->num_rows();
 	}
+	
+		public function _getYouTubeIdFromURL($url)
+{
+  $url_string = parse_url($url, PHP_URL_QUERY);
+  parse_str($url_string, $args);
+  return isset($args['v']) ? $args['v'] : false;
+}
 }
 
 /* End of file M_kota.php */

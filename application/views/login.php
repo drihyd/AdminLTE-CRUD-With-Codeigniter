@@ -24,16 +24,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="hold-transition login-page">
+  <body class="hold-transition login-page" style="background-color:#EAF8EB!important">
     <div class="login-box">
       <div class="login-logo">
-        <a href="<?php echo base_url(); ?>assets/index2.html"><b>SecureMyPlot</a>
+        <a href="<?php echo base_url(); ?>assets/index2.html"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
       </div>
 
       <!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">
-          Log in to start your session
+          Admin Login
         </p>
 
         <form action="<?php echo base_url('Auth/login'); ?>" method="post">
