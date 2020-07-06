@@ -41,14 +41,14 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('pincode', 'Pincode', 'trim|required');
 		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
-		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
-		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
-		$this->form_validation->set_rules('plot_map', 'Plot Map', 'trim|required');
+		//$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
+		//$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
+		//$this->form_validation->set_rules('plot_map', 'Plot Map', 'trim|required');
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
 			$config['upload_path'] = './assets/plot_map/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$config['allowed_types'] = 'gif|jpg|jpeg|png';			
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('plot_map')){
 				$error = array('error' => $this->upload->display_errors());
@@ -100,8 +100,8 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('pincode', 'Pincode', 'trim|required');
 		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
-		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
-		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
+		//$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
+		//$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
 		//$this->form_validation->set_rules('plot_map', 'Plot Map', 'required');
 
 
@@ -113,6 +113,7 @@ class Plots extends AUTH_Controller {
 			$this->upload->initialize($config);
 			if (!$this->upload->do_upload('plot_map')){
 				$error = array('error' => $this->upload->display_errors());
+				//$data['plot_map']='';
 				
 			}
 			else{

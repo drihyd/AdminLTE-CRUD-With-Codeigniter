@@ -16,8 +16,8 @@
     <td><?php echo $posisi->lat; ?> - <?php echo $posisi->lag; ?></td>
     <td> 
 <?php if(!empty($posisi->plot_map)) {?>
-<img src="./assets/plot_map/<?php echo $posisi->plot_map; ?>" class="img-fluid rounded" style="width:104px;height:auto;"/>
-      <a target="_new" href="./assets/plot_map/<?php echo $posisi->plot_map; ?>"><i class="glyphicon glyphicon-new-window"></i></a>
+<img src="./assets/plot_map/<?php echo $posisi->plot_map; ?>" class="img-fluid rounded" style="width:50px;height:auto;"/>
+      
     <?php } ?>
       </td>
 

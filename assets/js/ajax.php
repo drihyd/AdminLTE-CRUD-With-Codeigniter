@@ -604,6 +604,7 @@ xhr.send(formdata);
 		})
 	})
 
+/*
 	$('#form-tambah-posisi').submit(function(e) {
 		var data = $(this).serialize();
 
@@ -630,32 +631,96 @@ xhr.send(formdata);
 		
 		e.preventDefault();
 	});
+	
+	*/
 
-	$(document).on('submit', '#form-update-posisi', function(e){
-		var data = $(this).serialize();
 
-		$.ajax({
-			method: 'POST',
-			url: '<?php echo base_url('plots/prosesUpdate'); ?>',
-			data: data
-		})
-		.done(function(data) {
-			var out = jQuery.parseJSON(data);
+$(document).ready(function() {
 
+$(document).on('submit', '#form-update-posisi', function(e){
+e.preventDefault();
+var form = document.getElementById('form-update-posisi'); //id of form
+var formdata = new FormData(form);
+var xhr = new XMLHttpRequest();
+xhr.open('POST','<?php echo base_url('plots/prosesUpdate'); ?>',true);
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+//if you have included the setRequestHeader remove that line as you need the 
+// multipart/form-data as content type.
+xhr.onload = function(){
+
+console.log(xhr.responseText);
+var out = jQuery.parseJSON(xhr.responseText);
+
+
+tampilPosisi();
+if (out.status == 'form') {
+$('.form-msg').html(out.msg);
+effect_msg_form();
+} else {
+document.getElementById("form-update-posisi").reset();
+$('#update-posisi').modal('hide');
+$('.msg').html(out.msg);
+effect_msg();
+}
+
+}
+xhr.send(formdata);
+e.preventDefault();
+});
+});
+
+
+
+/*** Add ***/
+
+
+$(document).on('submit', '#form-tambah-posis', function(e){
+e.preventDefault();
+
+var form = document.getElementById('form-tambah-posis'); //id of form
+var formdata = new FormData(form);
+var xhr = new XMLHttpRequest();
+xhr.open('POST','<?php echo base_url('plots/prosesTambah'); ?>',true);
+// xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); 
+//if you have included the setRequestHeader remove that line as you need the 
+// multipart/form-data as content type.
+xhr.onload = function(){
+	
+	console.log(xhr.responseText);
+	var out = jQuery.parseJSON(xhr.responseText);
+
+		
 			tampilPosisi();
 			if (out.status == 'form') {
 				$('.form-msg').html(out.msg);
 				effect_msg_form();
 			} else {
-				document.getElementById("form-update-posisi").reset();
-				$('#update-posisi').modal('hide');
+				document.getElementById("form-tambah-posis").reset();
+				$('#tambah-posisi').modal('hide');
 				$('.msg').html(out.msg);
 				effect_msg();
 			}
-		})
-		
-		e.preventDefault();
+ 
+}
+xhr.send(formdata);
+e.preventDefault();
 	});
+
+
+
+/*** End ***/
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
 
 	$('#tambah-posisi').on('hidden.bs.modal', function () {
 	  $('.form-msg').html('');
