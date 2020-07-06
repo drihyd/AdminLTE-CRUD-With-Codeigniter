@@ -18,7 +18,9 @@ class Plots extends AUTH_Controller {
 		$data['judul'] 		= "Plots Data";
 		$data['deskripsi'] 	= "Manage Data Plots";
 		$data['modal_tambah_posisi'] = show_my_modal('modals/modal_tambah_posisi', 'tambah-posisi', $data);
+		// echo '<pre>'; print_r($data); exit();
 		$this->template->views('plots/home', $data);
+
 	}
 
 	public function tampil() {
@@ -30,8 +32,8 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('customer_id', 'Customer', 'trim|required');
 		$this->form_validation->set_rules('owner_name', 'Owner Name', 'trim|required');
 		$this->form_validation->set_rules('address1', 'Address1', 'trim|required');
-		$this->form_validation->set_rules('address2', 'Address2', 'trim|required');
-		$this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
+		// $this->form_validation->set_rules('address2', 'Address2', 'trim|required');
+		// $this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
 		$this->form_validation->set_rules('survey_no', 'Survey No', 'trim|required');
 		$this->form_validation->set_rules('village', 'Village', 'trim|required');
 		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');
@@ -41,9 +43,25 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
 		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
 		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
+		$this->form_validation->set_rules('plot_map', 'Plot Map', 'trim|required');
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
+			$config['upload_path'] = './assets/plot_map/';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('plot_map')){
+				$error = array('error' => $this->upload->display_errors());
+
+				// echo '<pre>'; print_r($error); exit();
+				
+			}
+			else{
+				$data_plot_map = $this->upload->data();
+				$data['plot_map'] = $data_plot_map['file_name'];
+				// echo '<pre>'; print_r($data); exit();
+			}
+
 			$result = $this->M_posisi->insert($data);
 
 			if ($result > 0) {
@@ -73,8 +91,8 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('owner_name', 'Owner Name', 'trim|required');
 		$this->form_validation->set_rules('address1', 'Address1', 'trim|required');
-		$this->form_validation->set_rules('address2', 'Address2', 'trim|required');
-		$this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
+		// $this->form_validation->set_rules('address2', 'Address2', 'trim|required');
+		// $this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
 		$this->form_validation->set_rules('survey_no', 'Survey No', 'trim|required');
 		$this->form_validation->set_rules('village', 'Village', 'trim|required');
 		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');
@@ -84,10 +102,24 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
 		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
 		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
+		//$this->form_validation->set_rules('plot_map', 'Plot Map', 'required');
 
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
+			$config['upload_path'] = 'assets/plot_map/';
+			$config['allowed_types'] = 'jpg|gif|png|jpeg|JPG|PNG|JPEG';			
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			if (!$this->upload->do_upload('plot_map')){
+				$error = array('error' => $this->upload->display_errors());
+				
+			}
+			else{
+				$data_plot_map = $this->upload->data();
+				$data['plot_map'] = $data_plot_map['file_name'];
+			}
+
 			$result = $this->M_posisi->update($data);
 
 			if ($result > 0) {

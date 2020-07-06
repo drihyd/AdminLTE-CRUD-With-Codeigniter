@@ -3,7 +3,7 @@
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <h3 style="display:block; text-align:center;">Plot Data Update</h3>
 
-  <form id="form-update-posisi" method="POST">
+  <form id="form-update-posisi" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $dataPosisi->id; ?>">
 	
 	
@@ -120,6 +120,12 @@
 </div>
 </div>	   
 </div>
+<div class="form-group-sm">
+  <label>Upload Map</label>
+   
+      <input type="file" class="form-control" placeholder="upload map" name="plot_map" id="plot_map"  aria-describedby="sizing-addon2" >
+    
+    </div>
 	
 
   <div class="form-group-sm">

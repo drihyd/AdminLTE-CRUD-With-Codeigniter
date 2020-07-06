@@ -32,6 +32,7 @@
           <th>District</th>
           <th>Authority</th>
           <th>Lat-longs</th>
+          <th>Plot Map</th>
           <th style="text-align: center;">Action</th>
         </tr>
       </thead>
