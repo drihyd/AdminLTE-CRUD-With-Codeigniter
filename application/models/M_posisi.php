@@ -6,7 +6,7 @@ class M_posisi extends CI_Model {
 	public function select_all() {
 
 
-		$sql = " SELECT users.id AS id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.plot_no,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.pincode,plots.state FROM users,plots WHERE users.id = plots.customer_id";
+		$sql = " SELECT users.id AS id, users.first_name AS first_name, users.last_name AS last_name, plots.id as plot_id,plots.owner_name AS owner_name,plots.address1,plots.address2,plots.plot_no,plots.survey_no,plots.village,plots.mandal,plots.district,plots.authority,plots.pincode,plots.state,plots.lat,plots.lag FROM users,plots WHERE users.id = plots.customer_id";
 
 		$data = $this->db->query($sql);
 
@@ -46,6 +46,8 @@ class M_posisi extends CI_Model {
 			'pincode' => $data['pincode'],
 			'authority' => $data['authority'],
 			'state' => $data['state'],
+			'lat' => $data['lat'],
+			'lag' => $data['lag'],
 			'created_date' => $timeStamp,
 			'modified_date' => $timeStamp
 
@@ -67,7 +69,7 @@ class M_posisi extends CI_Model {
 	}
 
 	public function update($data) {
-		$sql = "UPDATE plots SET state='" .$data['state'] ."',authority='" .$data['authority'] ."',district='" .$data['district'] ."',pincode='" .$data['pincode'] ."',mandal='" .$data['mandal'] ."',survey_no='" .$data['survey_no'] ."',plot_no='" .$data['plot_no'] ."',village='" .$data['village'] ."',address2='" .$data['address2'] ."',address1='" .$data['address1'] ."',customer_id='" .$data['customer_id'] ."',owner_name='" .$data['owner_name'] ."' WHERE id='" .$data['id'] ."'";
+		$sql = "UPDATE plots SET lat='" .$data['lat'] ."',lag='" .$data['lag'] ."',state='" .$data['state'] ."',authority='" .$data['authority'] ."',district='" .$data['district'] ."',pincode='" .$data['pincode'] ."',mandal='" .$data['mandal'] ."',survey_no='" .$data['survey_no'] ."',plot_no='" .$data['plot_no'] ."',village='" .$data['village'] ."',address2='" .$data['address2'] ."',address1='" .$data['address1'] ."',customer_id='" .$data['customer_id'] ."',owner_name='" .$data['owner_name'] ."' WHERE id='" .$data['id'] ."'";
 
 		$this->db->query($sql);
 

@@ -25,12 +25,13 @@
           <th>Customer Name</th>
           <th>Owner Name</th>
           <th>Address</th>
-		  <th>Plot No.</th>
+		      <th>Plot No.</th>
           <th>Survey No.</th>
           <th>Villate</th>
           <th>Mandal</th>
           <th>District</th>
           <th>Authority</th>
+          <th>Lat-longs</th>
           <th style="text-align: center;">Action</th>
         </tr>
       </thead>

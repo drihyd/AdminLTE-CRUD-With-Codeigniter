@@ -39,6 +39,8 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('pincode', 'Pincode', 'trim|required');
 		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
+		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
+		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
@@ -80,6 +82,8 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('pincode', 'Pincode', 'trim|required');
 		$this->form_validation->set_rules('authority', 'Authority', 'trim|required');
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
+		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
+		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
 
 
 		$data 	= $this->input->post();

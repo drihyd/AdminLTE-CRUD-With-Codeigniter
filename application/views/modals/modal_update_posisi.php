@@ -108,6 +108,18 @@
 </div>
 </div>	   
 </div>
+<div class="form-group-sm ">
+<div class="row">
+<div class="col-md-6">
+<label>Latitude</label>     
+<input type="text" class="form-control" placeholder="Latitude" name="lat" aria-describedby="sizing-addon2" value="<?php echo $dataPosisi->lat; ?>">
+</div>
+<div class="col-md-6">
+<label>Longitude</label>     
+ <input type="text" class="form-control" placeholder="Longitude" name="lag" aria-describedby="sizing-addon2" value="<?php echo $dataPosisi->lag; ?>">
+</div>
+</div>	   
+</div>
 	
 
   <div class="form-group-sm">
