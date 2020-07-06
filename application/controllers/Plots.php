@@ -30,8 +30,8 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('customer_id', 'Customer', 'trim|required');
 		$this->form_validation->set_rules('owner_name', 'Owner Name', 'trim|required');
 		$this->form_validation->set_rules('address1', 'Address1', 'trim|required');
-		$this->form_validation->set_rules('address2', 'Address2', 'trim|required');
-		$this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
+		// $this->form_validation->set_rules('address2', 'Address2', 'trim|required');
+		// $this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
 		$this->form_validation->set_rules('survey_no', 'Survey No', 'trim|required');
 		$this->form_validation->set_rules('village', 'Village', 'trim|required');
 		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');
@@ -73,8 +73,8 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('customer_id', 'Customer Id', 'trim|required');
 		$this->form_validation->set_rules('owner_name', 'Owner Name', 'trim|required');
 		$this->form_validation->set_rules('address1', 'Address1', 'trim|required');
-		$this->form_validation->set_rules('address2', 'Address2', 'trim|required');
-		$this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
+		// $this->form_validation->set_rules('address2', 'Address2', 'trim|required');
+		// $this->form_validation->set_rules('plot_no', 'Plot No', 'trim|required');
 		$this->form_validation->set_rules('survey_no', 'Survey No', 'trim|required');
 		$this->form_validation->set_rules('village', 'Village', 'trim|required');
 		$this->form_validation->set_rules('mandal', 'Mandal', 'trim|required');

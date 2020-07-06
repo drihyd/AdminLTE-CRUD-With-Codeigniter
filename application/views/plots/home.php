@@ -22,17 +22,17 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Customer Name</th>
-          <th>Owner Name</th>
-          <th>Address</th>
-		      <th>Plot No.</th>
-          <th>Survey No.</th>
-          <th>Villate</th>
-          <th>Mandal</th>
-          <th>District</th>
-          <th>Authority</th>
-          <th>Lat-longs</th>
-          <th style="text-align: center;">Action</th>
+          <th width="20%">Customer Name</th>
+          <th width="20%">Owner Name</th>
+          <th width="20%">Address</th>
+		      <th width="20%">Plot No.</th>
+          <th width="20%">Survey No.</th>
+          <th width="20%">Villate</th>
+          <th width="20%">Mandal</th>
+          <th width="20%">District</th>
+          <th width="20%">Authority</th>
+          <th width="20%">Lat-longs</th>
+          <th style="text-align: center;" width="10%">Action</th>
         </tr>
       </thead>
       <tbody id="data-posisi">

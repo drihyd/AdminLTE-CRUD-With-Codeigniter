@@ -16,8 +16,8 @@
     <td><?php echo $posisi->lat; ?> - <?php echo $posisi->lag; ?></td>
 
       <td class="text-center" style="min-width:230px;">
-        <button class="btn btn-warning update-dataPosisi" data-id="<?php echo $posisi->plot_id; ?>"><i class="glyphicon glyphicon-pencil"></i></button>
-        <button class="btn btn-danger konfirmasiHapus-posisi" data-id="<?php echo $posisi->plot_id; ?>" data-toggle="modal" data-target="#konfirmasiHapus"><i class="glyphicon glyphicon-remove-sign"></i></button>
+        <button class="btn btn-warning update-dataPosisi btn-sm" data-id="<?php echo $posisi->plot_id; ?>"><i class="glyphicon glyphicon-pencil"></i></button>
+        <button class="btn btn-danger konfirmasiHapus-posisi btn-sm" data-id="<?php echo $posisi->plot_id; ?>" data-toggle="modal" data-target="#konfirmasiHapus"><i class="glyphicon glyphicon-remove-sign"></i></button>
         <!--<button class="btn btn-info detail-dataPosisi" data-id="<?php echo $posisi->plot_id; ?>"><i class="glyphicon glyphicon-info-sign"></i> Detail</button>-->
       </td>
     </tr>
