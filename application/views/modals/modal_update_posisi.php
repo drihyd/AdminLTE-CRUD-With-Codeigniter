@@ -120,6 +120,12 @@
 </div>
 </div>	   
 </div>
+<div class="form-group-sm">
+  <label>Upload Map</label>
+   
+      <input type="file" class="form-control" placeholder="upload map" name="plot_map" id="plot_map"  aria-describedby="sizing-addon2" >
+    
+    </div>
 	
 
   <div class="form-group-sm">

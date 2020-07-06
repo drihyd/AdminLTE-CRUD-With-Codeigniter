@@ -18,7 +18,9 @@ class Plots extends AUTH_Controller {
 		$data['judul'] 		= "Plots Data";
 		$data['deskripsi'] 	= "Manage Data Plots";
 		$data['modal_tambah_posisi'] = show_my_modal('modals/modal_tambah_posisi', 'tambah-posisi', $data);
+		// echo '<pre>'; print_r($data); exit();
 		$this->template->views('plots/home', $data);
+
 	}
 
 	public function tampil() {
@@ -41,9 +43,25 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
 		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
 		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
+		$this->form_validation->set_rules('plot_map', 'Plot Map', 'trim|required');
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
+			$config['upload_path'] = './assets/plot_map/';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('plot_map')){
+				$error = array('error' => $this->upload->display_errors());
+
+				// echo '<pre>'; print_r($error); exit();
+				
+			}
+			else{
+				$data_plot_map = $this->upload->data();
+				$data['plot_map'] = $data_plot_map['file_name'];
+				// echo '<pre>'; print_r($data); exit();
+			}
+
 			$result = $this->M_posisi->insert($data);
 
 			if ($result > 0) {
@@ -84,10 +102,22 @@ class Plots extends AUTH_Controller {
 		$this->form_validation->set_rules('state', 'State', 'trim|required');
 		$this->form_validation->set_rules('lat', 'Latitude', 'trim|required');
 		$this->form_validation->set_rules('lag', 'Longitude', 'trim|required');
+		$this->form_validation->set_rules('plot_map', 'Plot Map', 'trim|required');
 
 
 		$data 	= $this->input->post();
 		if ($this->form_validation->run() == TRUE) {
+			$config['upload_path'] = './assets/plot_map/';
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('plot_map')){
+				$error = array('error' => $this->upload->display_errors());
+				
+			}
+			else{
+				$data_plot_map = $this->upload->data();
+				$data['plot_map'] = $data_plot_map['file_name'];
+			}
 			$result = $this->M_posisi->update($data);
 
 			if ($result > 0) {
