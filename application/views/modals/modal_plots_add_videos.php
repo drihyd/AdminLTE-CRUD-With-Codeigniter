@@ -39,6 +39,13 @@
       <label>Video URL (See reference screenshot for add url)</label>
       <input type="text" class="form-control" placeholder="Video URL" name="file_path" aria-describedby="sizing-addon2" required="required">
     </div>
+    <div class="form-group-sm">
+      <label>Description</label>
+
+<textarea id="w3review" name="description" rows="3" class="form-control" >
+
+</textarea>
+    </div>
    
 
     <div class="form-group-sm">
