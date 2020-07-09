@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+  <Document>
+    <ScreenOverlay>
+      <name>Trimble Business Center</name>
+      <Icon>
+        <href>C:\Program Files (x86)\Trimble\Trimble Business Center\Support\iv\TrimbleLogoWhite.jpg</href>
+      </Icon>
+      <overlayXY x="0" y="1" xunits="fraction" yunits="fraction" />
+      <screenXY x="0.01" y="0.99" xunits="fraction" yunits="fraction" />
+      <size x="0.15" y="0" xunits="fraction" yunits="fraction" />
+    </ScreenOverlay>
+    <Style id="pointStyle">
+      <IconStyle>
+        <color>ffffffff</color>
+        <Icon>
+          <href>root://icons/palette-4.png</href>
+          <x>32</x>
+          <y>0</y>
+        </Icon>
+        <scale>0.5</scale>
+      </IconStyle>
+      <LabelStyle>
+        <color>ffffffff</color>
+        <scale>0.6</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+      </BalloonStyle>
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>1</width>
+      </LineStyle>
+    </Style>
+    <Style id="pointStylePhoto">
+      <IconStyle>
+        <color>ffffffff</color>
+        <Icon>
+          <href>C:\Program Files (x86)\Trimble\Trimble Business Center\Support\iv\camera.png</href>
+          <x>0</x>
+          <y>0</y>
+        </Icon>
+        <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction" />
+        <scale>0.6</scale>
+      </IconStyle>
+      <LabelStyle>
+        <color>ffffffff</color>
+        <scale>0.6</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<b>$[name]</b><br/>$[description]]]></text>
+      </BalloonStyle>
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>1</width>
+      </LineStyle>
+    </Style>
+    <Style id="observationStyleGPS">
+      <LabelStyle>
+        <color>ffffffff</color>
+        <scale>0.6</scale>
+      </LabelStyle>
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>1</width>
+      </LineStyle>
+    </Style>
+    <Style id="observationStyleTS">
+      <LabelStyle>
+        <color>ffffffff</color>
+        <scale>0.6</scale>
+      </LabelStyle>
+      <LineStyle>
+        <color>ff32cd32</color>
+        <width>1</width>
+      </LineStyle>
+    </Style>
+    <Style id="observationStyleMisc">
+      <LabelStyle>
+        <color>ffffffff</color>
+        <scale>0.6</scale>
+      </LabelStyle>
+      <LineStyle>
+        <color>ff96d248</color>
+        <width>1</width>
+      </LineStyle>
+    </Style>
+    <Style id="baselineStyle">
+      <LabelStyle>
+        <color>ffffffff</color>
+        <scale>0.6</scale>
+      </LabelStyle>
+      <LineStyle>
+        <color>ffffff00</color>
+        <width>1</width>
+      </LineStyle>
+    </Style>
+    <Folder>
+      <Placemark>
+        <name>1</name>
+        <description><![CDATA[<table><tr><th colspan="2">Coordinates</th></tr><tr><td>Easting</td><td>255180.076 m</td></tr><tr><td>Northing</td><td>1904186.303 m</td></tr><tr><td>Elevation</td><td>540.390 m</td></tr></table>]]></description>
+        <snippet maxLines="0" />
+        <styleUrl>#pointStyle</styleUrl>
+        <Point>
+          <coordinates>78.6979365209848,17.2094944357526,462.18568862509</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>2</name>
+        <description><![CDATA[<table><tr><th colspan="2">Coordinates</th></tr><tr><td>Easting</td><td>255193.651 m</td></tr><tr><td>Northing</td><td>1904150.427 m</td></tr><tr><td>Elevation</td><td>542.119 m</td></tr></table>]]></description>
+        <snippet maxLines="0" />
+        <styleUrl>#pointStyle</styleUrl>
+        <Point>
+          <coordinates>78.6980681057882,17.209171861469,463.912340832874</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>3</name>
+        <description><![CDATA[<table><tr><th colspan="2">Coordinates</th></tr><tr><td>Easting</td><td>255180.368 m</td></tr><tr><td>Northing</td><td>1904145.100 m</td></tr><tr><td>Elevation</td><td>543.480 m</td></tr></table>]]></description>
+        <snippet maxLines="0" />
+        <styleUrl>#pointStyle</styleUrl>
+        <Point>
+          <coordinates>78.6979438757535,17.2091223208967,465.273993148468</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>base</name>
+        <description><![CDATA[<table><tr><th colspan="2">Coordinates</th></tr><tr><td>Easting</td><td>255190.887 m</td></tr><tr><td>Northing</td><td>1904174.323 m</td></tr><tr><td>Elevation</td><td>543.670 m</td></tr></table>]]></description>
+        <snippet maxLines="0" />
+        <styleUrl>#pointStyle</styleUrl>
+        <Point>
+          <coordinates>78.6980394590783,17.2093873975464,465.464632749951</coordinates>
+        </Point>
+      </Placemark>
+      <name>Point</name>
+    </Folder>
+    <Folder>
+      <Placemark>
+        <name>base-1 (PV3)</name>
+        <styleUrl>#observationStyleGPS</styleUrl>
+        <LineString>
+          <coordinates>78.6980394590785,17.2093873975464,465.464632749951 78.6979365209849,17.2094944357526,462.18568862509</coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>base-2 (PV2)</name>
+        <styleUrl>#observationStyleGPS</styleUrl>
+        <LineString>
+          <coordinates>78.6980394590785,17.2093873975464,465.464632749951 78.6980681057883,17.209171861469,463.912340832874</coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>base-3 (PV1)</name>
+        <styleUrl>#observationStyleGPS</styleUrl>
+        <LineString>
+          <coordinates>78.6980394590785,17.2093873975464,465.464632749951 78.6979438757537,17.2091223208967,465.273993148468</coordinates>
+        </LineString>
+      </Placemark>
+      <name>PPVector</name>
+    </Folder>
+    <Folder>
+      <Placemark>
+        <name>base --- 1 (B3)</name>
+        <styleUrl>#baselineStyle</styleUrl>
+        <LineString>
+          <coordinates>78.6980394590785,17.2093873975464,465.464632749951 78.6979365209849,17.2094944357526,462.18568862509</coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>base --- 2 (B2)</name>
+        <styleUrl>#baselineStyle</styleUrl>
+        <LineString>
+          <coordinates>78.6980394590785,17.2093873975464,465.464632749951 78.6980681057883,17.209171861469,463.912340832874</coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>base --- 3 (B1)</name>
+        <styleUrl>#baselineStyle</styleUrl>
+        <LineString>
+          <coordinates>78.6980394590785,17.2093873975464,465.464632749951 78.6979438757537,17.2091223208967,465.273993148468</coordinates>
+        </LineString>
+      </Placemark>
+      <name>Baseline</name>
+    </Folder>
+  </Document>
+</kml>

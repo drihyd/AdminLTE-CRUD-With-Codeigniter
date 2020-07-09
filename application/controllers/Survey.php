@@ -40,7 +40,7 @@ class Survey extends AUTH_Controller {
 
 
 			$config['upload_path'] = './assets/kml_files/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp|kml';			
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('kml_file')){
 				$error = array('error' => $this->upload->display_errors());
@@ -90,7 +90,7 @@ class Survey extends AUTH_Controller {
 		if ($this->form_validation->run() == TRUE) {
 
 			$config['upload_path'] = './assets/kml_files/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp';			
+			$config['allowed_types'] = 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc|sxi|txt|exe|avi|mpeg|mp3|mp4|3gp|kml';			
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('kml_file')){
 				$error = array('error' => $this->upload->display_errors());
